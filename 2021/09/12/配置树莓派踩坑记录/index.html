@@ -13,24 +13,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="My raspberrypi configurations启动VNC和SSHsudo raspi-config，在interface中开启vnc和ssh即可
+">
   <meta name="author" content="BillHu">
   <meta name="keywords" content="">
-  <meta name="description" content="My raspberrypi configurations启动VNC和SSHsudo raspi-config，在interface中开启vnc和ssh即可 电脑ssh树莓派时，如果出现以下错误：  12345678$ ssh pi@192.168.31.214@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    WARNI">
+  <meta name="description" content="My raspberrypi configurations启动VNC和SSHsudo raspi-config，在interface中开启vnc和ssh即可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置树莓派踩坑记录">
+<meta property="og:title" content="树莓派配置记录">
 <meta property="og:url" content="http://billhu0.github.io/2021/09/12/%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
-<meta property="og:description" content="My raspberrypi configurations启动VNC和SSHsudo raspi-config，在interface中开启vnc和ssh即可 电脑ssh树莓派时，如果出现以下错误：  12345678$ ssh pi@192.168.31.214@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    WARNI">
+<meta property="og:description" content="My raspberrypi configurations启动VNC和SSHsudo raspi-config，在interface中开启vnc和ssh即可">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-12T15:16:05.000Z">
-<meta property="article:modified_time" content="2021-09-12T15:19:18.683Z">
+<meta property="article:modified_time" content="2021-09-13T04:35:10.214Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="RaspberryPi">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>配置树莓派踩坑记录 - Bill Hu&#39;s Blog</title>
+  <title>树莓派配置记录 - Bill Hu&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -177,7 +178,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="配置树莓派踩坑记录">
+            <span class="h2" id="subtitle" title="树莓派配置记录">
               
             </span>
 
@@ -236,10 +237,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">配置树莓派踩坑记录</h1>
+            <h1 style="display: none">树莓派配置记录</h1>
             
             <div class="markdown-body">
               <h1 id="My-raspberrypi-configurations"><a href="#My-raspberrypi-configurations" class="headerlink" title="My raspberrypi configurations"></a>My raspberrypi configurations</h1><h3 id="启动VNC和SSH"><a href="#启动VNC和SSH" class="headerlink" title="启动VNC和SSH"></a>启动VNC和SSH</h3><p><code>sudo raspi-config</code>，在interface中开启vnc和ssh即可</p>
+<p><em><span id="more"></span></em></p>
 <p>电脑ssh树莓派时，如果出现以下错误：</p>
 <blockquote>
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs gauss">$ ssh <span class="hljs-built_in">pi</span><span class="hljs-comment">@192.168.31.214</span><br><span class="hljs-comment">@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><br><span class="hljs-comment">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@</span><br><span class="hljs-comment">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="hljs-comment">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="hljs-comment">It is also possible that a host key has just been changed.</span><br><span class="hljs-comment">........</span><br></code></pre></td></tr></table></figure>
@@ -299,7 +301,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/RaspberryPi/">RaspberryPi</a>
+                      <a class="hover-with-bg" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
                     
                   </div>
                 
