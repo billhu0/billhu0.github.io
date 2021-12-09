@@ -24,12 +24,12 @@
 <meta property="og:description" content="Implementation of some sort algorithmsMergesort12345678910111213141516171819202122232425262728293031323334353637383940414243&#x2F;* Normal Mergesort *&#x2F;template &lt;class T&gt;void __mergesort(T src[], int">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="1970-10-11T13:32:00.000Z">
-<meta property="article:modified_time" content="2021-12-09T08:51:44.013Z">
+<meta property="article:modified_time" content="2021-12-09T08:58:13.871Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Algorithm - Bill Hu&#39;s Blog</title>
+  <title>Algorithm - Bill Hu&#39;s Blog</title><meta name="robots" content="noindex">
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      2.2k 字
     </span>
   
 
@@ -248,6 +248,14 @@
 <h3 id="Quicksort"><a href="#Quicksort" class="headerlink" title="Quicksort"></a>Quicksort</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">template</span> &lt;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span>&gt;</span><br><span class="hljs-keyword">void</span> __quicksort(T src[], <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)&#123;<br>    <span class="hljs-keyword">if</span> (l &gt;= r) <span class="hljs-keyword">return</span>;<br>    std::<span class="hljs-built_in">swap</span>(src[l], src[(l + r) / <span class="hljs-number">2</span>]);<br>    <span class="hljs-keyword">int</span> i = l, j = r;<br>    T pivot = src[l];<br>    <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>        <span class="hljs-keyword">while</span>(i &lt; j &amp;&amp; src[j] &gt;= pivot) j--;  <br>        <span class="hljs-keyword">if</span>(i &lt; j) src[i++] = src[j];<br>        <span class="hljs-keyword">while</span>(i &lt; j &amp;&amp; src[i] &lt; pivot) i++;  <br>        <span class="hljs-keyword">if</span>(i &lt; j) src[j--] = src[i];<br>    &#125;<br>    src[i] = pivot;<br>    __quicksort(src, l, i - <span class="hljs-number">1</span>); <br>    __quicksort(src, i + <span class="hljs-number">1</span>, r);<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span>&gt;</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quicksort</span><span class="hljs-params">(T src[], <span class="hljs-keyword">int</span> n)</span></span>&#123;<br>    __quicksort(src, <span class="hljs-number">0</span>, n<span class="hljs-number">-1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
+
+<h3 id="QuickRead"><a href="#QuickRead" class="headerlink" title="QuickRead"></a>QuickRead</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">q_read</span><span class="hljs-params">(<span class="hljs-keyword">int</span>&amp; number)</span></span>&#123;<br>    <span class="hljs-keyword">int32_t</span> x = <span class="hljs-number">0</span>; <span class="hljs-keyword">int8_t</span> f = <span class="hljs-number">1</span>; <span class="hljs-keyword">char</span> c;<br>    <span class="hljs-keyword">do</span>&#123; c = <span class="hljs-built_in">getchar</span>(); <span class="hljs-keyword">if</span> (c == <span class="hljs-number">45</span>) f = <span class="hljs-number">-1</span>;&#125; <span class="hljs-keyword">while</span> (c &gt; <span class="hljs-number">57</span> || c &lt; <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">do</span>&#123; x = (x&lt;&lt;<span class="hljs-number">1</span>) + (x&lt;&lt;<span class="hljs-number">3</span>) + c<span class="hljs-number">-48</span>; c = <span class="hljs-built_in">getchar</span>();&#125; <span class="hljs-keyword">while</span> (c &lt;= <span class="hljs-number">57</span> &amp;&amp; c &gt;= <span class="hljs-number">48</span>);<br>    number = f * x;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Simple-Vector-with-only-‘pushback’-and-‘clear’"><a href="#Simple-Vector-with-only-‘pushback’-and-‘clear’" class="headerlink" title="Simple Vector with only ‘pushback’ and ‘clear’"></a>Simple Vector with only ‘pushback’ and ‘clear’</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Vector</span>&#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-keyword">index_t</span> size = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">value_t</span> array[MAX_NUM_V];<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push_back</span><span class="hljs-params">(<span class="hljs-keyword">value_t</span> given_value)</span> </span>&#123; array[size++] = given_value; &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span> </span>&#123; size = <span class="hljs-number">0</span>; &#125;<br>    <span class="hljs-keyword">value_t</span>&amp; <span class="hljs-keyword">operator</span>[](<span class="hljs-keyword">index_t</span> i) &#123; <span class="hljs-keyword">return</span> array[i]; &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<!-- flag of hidden posts -->
             </div>
             <hr>
             <div>
@@ -280,12 +288,6 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
-                    
-                      <a href="/2021/09/07/01.hello-world/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
                     
                   </article>
                   <article class="post-next col-6">
