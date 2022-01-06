@@ -16,12 +16,12 @@
   <meta name="description" content="">
   <meta name="author" content="BillHu">
   <meta name="keywords" content="">
-  <meta name="description" content="Build your blog with hexo and deploy it to GitHub Pages ( This is my first tutorial post written in English.  )  Preamble Maybe you want to have your own website and your own blog, but don’t want to">
+  <meta name="description" content="Build your blog with hexo and deploy it to GitHub Pages( This is my first tutorial post written in English.  ) PreambleMaybe you want to have your own website and your own blog, but don’t want to spen">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Build your blog with hexo and deploy to GitHub">
 <meta property="og:url" content="http://billhu0.github.io/2021/10/11/06_hexo/index.html">
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
-<meta property="og:description" content="Build your blog with hexo and deploy it to GitHub Pages ( This is my first tutorial post written in English.  )  Preamble Maybe you want to have your own website and your own blog, but don’t want to">
+<meta property="og:description" content="Build your blog with hexo and deploy it to GitHub Pages( This is my first tutorial post written in English.  ) PreambleMaybe you want to have your own website and your own blog, but don’t want to spen">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://billhu0.github.io/2021/10/11/06_hexo/SSH_1.jpg">
 <meta property="og:image" content="http://billhu0.github.io/2021/10/11/06_hexo/SSH_2.png">
@@ -245,26 +245,15 @@
             <h1 style="display: none">Build your blog with hexo and deploy to GitHub</h1>
             
             <div class="markdown-body">
-              <h2 id="build-your-blog-with-hexo-and-deploy-it-to-github-pages"><a class="markdownIt-Anchor" href="#build-your-blog-with-hexo-and-deploy-it-to-github-pages"></a> Build your blog with <code>hexo</code> and deploy it to GitHub Pages</h2>
-<p>( This is my first tutorial post written in English.  )</p>
-<h3 id="preamble"><a class="markdownIt-Anchor" href="#preamble"></a> Preamble</h3>
-<p>Maybe you want to have your own website and your own blog, but don’t want to spend money maintaining a server, or don’t have enough energy to start from the beginning making a website?  Well, you can build your blog with  <code>hexo</code>  and  <code>github pages</code> , just like how this tutorial is published, which is completely free and easy to use!</p>
+              <h2 id="Build-your-blog-with-hexo-and-deploy-it-to-GitHub-Pages"><a href="#Build-your-blog-with-hexo-and-deploy-it-to-GitHub-Pages" class="headerlink" title="Build your blog with hexo and deploy it to GitHub Pages"></a>Build your blog with <code>hexo</code> and deploy it to GitHub Pages</h2><p>( This is my first tutorial post written in English.  )</p>
+<h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p>Maybe you want to have your own website and your own blog, but don’t want to spend money maintaining a server, or don’t have enough energy to start from the beginning making a website?  Well, you can build your blog with  <code>hexo</code>  and  <code>github pages</code> , just like how this tutorial is published, which is completely free and easy to use! </p>
 <p>Follow these steps, and you can have your own blog! This is also how this blog is created.</p>
-<h3 id="step-1-install-nodejs-and-git"><a class="markdownIt-Anchor" href="#step-1-install-nodejs-and-git"></a> Step 1. Install  <code>node.js</code> and  <code>git</code></h3>
-<p>On macOS, <code>git</code> should be preinstalled as long as you have XCode downloaded, while<br />
-<code>node.js</code> can be installed with <code>brew</code>:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install node<br></code></pre></td></tr></table></figure>
-<p>You can execute <code>node -v</code> , <code>npm -v</code> , <code>git --version</code> to check if you have correctly installed these packages.</p>
-<h3 id="step-2-prepare-your-github-account"><a class="markdownIt-Anchor" href="#step-2-prepare-your-github-account"></a> Step 2. Prepare your GitHub Account.</h3>
-<h4 id="register-and-set-username-email"><a class="markdownIt-Anchor" href="#register-and-set-username-email"></a> Register and set username &amp; email</h4>
-<p>First, of course, you need to register a GitHub account (with your email). Note that the username will be your prefix of the website, so choose the username carefully. For instance, my username is <code>billhu0</code> and my website (just the one you are looking) is <code>billhu0.github.io</code>.</p>
+<h3 id="Step-1-Install-node-js-and-git"><a href="#Step-1-Install-node-js-and-git" class="headerlink" title="Step 1. Install  node.js and  git"></a>Step 1. Install  <code>node.js</code> and  <code>git</code></h3><p>On macOS, <code>git</code> should be preinstalled as long as you have XCode downloaded, while<br><code>node.js</code> can be installed with <code>brew</code>:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install node<br></code></pre></td></tr></table></figure><br>You can execute <code>node -v</code> , <code>npm -v</code> , <code>git --version</code> to check if you have correctly installed these packages.</p>
+<h3 id="Step-2-Prepare-your-GitHub-Account"><a href="#Step-2-Prepare-your-GitHub-Account" class="headerlink" title="Step 2. Prepare your GitHub Account."></a>Step 2. Prepare your GitHub Account.</h3><h4 id="Register-and-set-username-amp-email"><a href="#Register-and-set-username-amp-email" class="headerlink" title="Register and set username &amp; email"></a>Register and set username &amp; email</h4><p>First, of course, you need to register a GitHub account (with your email). Note that the username will be your prefix of the website, so choose the username carefully. For instance, my username is <code>billhu0</code> and my website (just the one you are looking) is <code>billhu0.github.io</code>.</p>
 <p>Then, go to terminal and run the following:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global user.name &quot;Your_github_name&quot;<br>git config --global user.email &quot;Your_github_email&quot;<br></code></pre></td></tr></table></figure>
-<p>Replace <code>&quot;Your_github_name&quot;</code> and <code>&quot;Your_github_email&quot;</code> with your github name and github email.</p>
-<h4 id="add-an-ssh-public-key"><a class="markdownIt-Anchor" href="#add-an-ssh-public-key"></a> Add an SSH public key</h4>
-<p>First, create an SSH key. In terminal,</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -t rsa -C &quot;Your_github_email&quot;<br></code></pre></td></tr></table></figure>
-<p>You may need to type <code>y</code> or <code>yes</code> according to the prompts.</p>
+<p>Replace <code>&quot;Your_github_name&quot;</code> and <code>&quot;Your_github_email&quot;</code> with your github name and github email. </p>
+<h4 id="Add-an-SSH-public-key"><a href="#Add-an-SSH-public-key" class="headerlink" title="Add an SSH public key"></a>Add an SSH public key</h4><p>First, create an SSH key. In terminal,<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -t rsa -C &quot;Your_github_email&quot;<br></code></pre></td></tr></table></figure><br>You may need to type <code>y</code> or <code>yes</code> according to the prompts. </p>
 <p>Then, copy the text in file <code>~/.ssh/id_rsa.pub</code>.</p>
 <p>Go to GitHub website, Settings, select <code>SSH and GPG keys</code> on the left sidebar, and click <code>New SSH key</code>.</p>
 <img src="/2021/10/11/06_hexo/SSH_1.jpg" srcset="/img/loading.gif" lazyload class="">
@@ -272,41 +261,25 @@
 <img src="/2021/10/11/06_hexo/SSH_2.png" srcset="/img/loading.gif" lazyload class="">
 <p>Finally, in terminal, run</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
-<p>type <code>yes</code> when seeing 'Are you sure … ', and wait for responce.</p>
-<p><code>Hi, xxx! You've successfully authenticated, ...</code> means that the connection is successful.</p>
+<p>type <code>yes</code> when seeing ‘Are you sure …. ‘, and wait for responce.</p>
+<p><code>Hi, xxx! You&#39;ve successfully authenticated, ...</code> means that the connection is successful.</p>
 <img src="/2021/10/11/06_hexo/SSH_3.png" srcset="/img/loading.gif" lazyload class="">
-<h3 id="step-3-create-github-pages-repository"><a class="markdownIt-Anchor" href="#step-3-create-github-pages-repository"></a> Step 3. Create Github Pages Repository</h3>
-<p>On Github website, click the ‘+’ icon on the top-right of the toolbar, and select ‘new repository’.</p>
-<p>Repository name:  <code>your_username.github.io</code>, e.g, <code>billhu0.github.io</code>.<br />
-Mark the checkbox ‘initialize this repository with a README’.<br />
-Description: No need to write.</p>
+<h3 id="Step-3-Create-Github-Pages-Repository"><a href="#Step-3-Create-Github-Pages-Repository" class="headerlink" title="Step 3. Create Github Pages Repository"></a>Step 3. Create Github Pages Repository</h3><p>On Github website, click the ‘+’ icon on the top-right of the toolbar, and select ‘new repository’.</p>
+<p>Repository name:  <code>your_username.github.io</code>, e.g, <code>billhu0.github.io</code>.<br>Mark the checkbox ‘initialize this repository with a README’.<br>Description: No need to write.</p>
 <p>HTTPS will be automatically enabled after that, and your blog address is <code>https://your_username.github.io</code>.</p>
-<h3 id="step-4-build-hexo-on-your-local-environment"><a class="markdownIt-Anchor" href="#step-4-build-hexo-on-your-local-environment"></a> Step 4. Build Hexo on your local environment</h3>
-<h4 id="install-hexo-with-npm-nodejs-package-manager"><a class="markdownIt-Anchor" href="#install-hexo-with-npm-nodejs-package-manager"></a> Install hexo with npm (nodejs package manager)</h4>
-<p>In terminal, execute</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo npm install -g hexo<br></code></pre></td></tr></table></figure>
-<p>If you are in China and the download speed is slow, you can use tencent mirror source by entering</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm config set registry http://mirrors.cloud.tencent.com/npm/<br></code></pre></td></tr></table></figure>
-<h4 id="initalize-hexo"><a class="markdownIt-Anchor" href="#initalize-hexo"></a> Initalize hexo</h4>
-<p>Choose a directory (this directory will be your local hexo directory, so choose it carefully). In the future, almost every operation should be done in this directory, so you are suggested to backup it regularly.</p>
-<p>In terminal, ‘cd’ to this directory, and run</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init<br>npm install<br></code></pre></td></tr></table></figure>
-<p>and wait until complete.</p>
-<h4 id="preview-your-blog"><a class="markdownIt-Anchor" href="#preview-your-blog"></a> Preview your blog.</h4>
-<p>Now your blog has been created by hexo. Run the following command in terminal</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo g   # this is the same as &#x27;hexo generate&#x27;<br>hexo s   # this is the same as &#x27;hexo server&#x27;<br></code></pre></td></tr></table></figure>
-<p>The <code>hexo g</code> command transfers your raw data (including posts, pages in markdown and other formats) into something that can be viewed on web.</p>
+<h3 id="Step-4-Build-Hexo-on-your-local-environment"><a href="#Step-4-Build-Hexo-on-your-local-environment" class="headerlink" title="Step 4. Build Hexo on your local environment"></a>Step 4. Build Hexo on your local environment</h3><h4 id="Install-hexo-with-npm-nodejs-package-manager"><a href="#Install-hexo-with-npm-nodejs-package-manager" class="headerlink" title="Install hexo with npm (nodejs package manager)"></a>Install hexo with npm (nodejs package manager)</h4><p>In terminal, execute<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo npm install -g hexo<br></code></pre></td></tr></table></figure></p>
+<p>If you are in China and the download speed is slow, you can use tencent mirror source by entering<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm config set registry http://mirrors.cloud.tencent.com/npm/<br></code></pre></td></tr></table></figure></p>
+<h4 id="Initalize-hexo"><a href="#Initalize-hexo" class="headerlink" title="Initalize hexo"></a>Initalize hexo</h4><p>Choose a directory (this directory will be your local hexo directory, so choose it carefully). In the future, almost every operation should be done in this directory, so you are suggested to backup it regularly.</p>
+<p>In terminal, ‘cd’ to this directory, and run<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init<br>npm install<br></code></pre></td></tr></table></figure><br>and wait until complete.</p>
+<h4 id="Preview-your-blog"><a href="#Preview-your-blog" class="headerlink" title="Preview your blog."></a>Preview your blog.</h4><p>Now your blog has been created by hexo. Run the following command in terminal<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo g   # this is the same as &#x27;hexo generate&#x27;<br>hexo s   # this is the same as &#x27;hexo server&#x27;<br></code></pre></td></tr></table></figure></p>
+<p>The <code>hexo g</code> command transfers your raw data (including posts, pages in markdown and other formats) into something that can be viewed on web. </p>
 <p>And <code>hexo s</code> can let you preview the website by visiting <code>localhost://4000</code> with your browser. If the command fails, enter <code>npm install hexo-server --save</code> and try again.</p>
-<h3 id="step-5-deploy-your-local-hexo-to-github-pages"><a class="markdownIt-Anchor" href="#step-5-deploy-your-local-hexo-to-github-pages"></a> Step 5. Deploy your local hexo to GitHub Pages</h3>
-<p>After testing your blog locally, you can now deploy it to the github repository you have just created, making it visiable to others.<br />
-In terminal, run</p>
+<h3 id="Step-5-Deploy-your-local-hexo-to-GitHub-Pages"><a href="#Step-5-Deploy-your-local-hexo-to-GitHub-Pages" class="headerlink" title="Step 5. Deploy your local hexo to GitHub Pages"></a>Step 5. Deploy your local hexo to GitHub Pages</h3><p>After testing your blog locally, you can now deploy it to the github repository you have just created, making it visiable to others.<br>In terminal, run </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
-<p>and go to the end of file <code>./_config.yml'</code>, modify the <code>deploy</code> part to the following</p>
+<p>and go to the end of file <code>./_config.yml&#39;</code>, modify the <code>deploy</code> part to the following </p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>	<span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>	<span class="hljs-attr">repository:</span> <span class="hljs-string">git@github.com:your_username/your_username.github.io.git</span><br>	<span class="hljs-attr">branch:</span> <span class="hljs-string">main</span>  <span class="hljs-comment"># or master, according to your repository.</span><br></code></pre></td></tr></table></figure>
 <img src="/2021/10/11/06_hexo/deploy_yml.png" srcset="/img/loading.gif" lazyload class="">
-<p>And then run the following command in terminal</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d  # alia of &#x27;hexo deploy&#x27;<br></code></pre></td></tr></table></figure>
-<p>Note that you can directly run a single <code>hexo d</code>, but to reduce the possibility of some small errors, you are suggested to run <code>hexo clean &amp;&amp; hexo g</code> everyone before you want to <code>hexo d</code>.</p>
+<p>And then run the following command in terminal<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d  # alia of &#x27;hexo deploy&#x27;<br></code></pre></td></tr></table></figure><br>Note that you can directly run a single <code>hexo d</code>, but to reduce the possibility of some small errors, you are suggested to run <code>hexo clean &amp;&amp; hexo g</code> everyone before you want to <code>hexo d</code>.</p>
 <p>Well Done! Now visit <code>your_username.github.io</code> and you can see your blog !</p>
 
             </div>
