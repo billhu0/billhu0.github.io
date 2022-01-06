@@ -16,12 +16,12 @@
   <meta name="description" content="">
   <meta name="author" content="BillHu">
   <meta name="keywords" content="">
-  <meta name="description" content="macOS 上用 VSCode 运行调试单文件 C(++) 的环境配置 1. 编译运行：Coderunner配置 下载插件coderunner即可。  在settings.json中可以自定义编译程序的命令。 我的自定义coderunner命令： 123456789101112131415161718192021&amp;#123;        &quot;code-runner.executorMap">
+  <meta name="description" content="macOS 上用 VSCode 运行调试单文件 C(++) 的环境配置  1. 编译运行：Coderunner配置 下载插件coderunner即可。  在settings.json中可以自定义编译程序的命令。 我的自定义coderunner命令： 123456789101112131415161718192021&amp;#123;        &quot;code-runner.executorM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(macOS)VSCode运行调试C(++)的环境配置">
 <meta property="og:url" content="http://billhu0.github.io/2021/10/10/05/index.html">
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
-<meta property="og:description" content="macOS 上用 VSCode 运行调试单文件 C(++) 的环境配置 1. 编译运行：Coderunner配置 下载插件coderunner即可。  在settings.json中可以自定义编译程序的命令。 我的自定义coderunner命令： 123456789101112131415161718192021&amp;#123;        &quot;code-runner.executorMap">
+<meta property="og:description" content="macOS 上用 VSCode 运行调试单文件 C(++) 的环境配置  1. 编译运行：Coderunner配置 下载插件coderunner即可。  在settings.json中可以自定义编译程序的命令。 我的自定义coderunner命令： 123456789101112131415161718192021&amp;#123;        &quot;code-runner.executorM">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://billhu0.github.io/2021/10/10/05/20210416215626549.png">
 <meta property="og:image" content="http://billhu0.github.io/2021/10/10/05/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0tpcmluXzg2NQ==,size_16,color_FFFFFF,t_70-20211010184017573.png">
@@ -79,7 +79,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
@@ -247,15 +251,15 @@
             <h1 style="display: none">(macOS)VSCode运行调试C(++)的环境配置</h1>
             
             <div class="markdown-body">
-              <h2 id="macos-上用-vscode-运行调试单文件-c-的环境配置">macOS 上用 VSCode 运行调试单文件 C(++) 的环境配置</h2>
-<h4 id="编译运行coderunner配置">1. 编译运行：Coderunner配置</h4>
+              <h2 id="macos-上用-vscode-运行调试单文件-c-的环境配置"><a class="markdownIt-Anchor" href="#macos-上用-vscode-运行调试单文件-c-的环境配置"></a> macOS 上用 VSCode 运行调试单文件 C(++) 的环境配置</h2>
+<h4 id="1-编译运行coderunner配置"><a class="markdownIt-Anchor" href="#1-编译运行coderunner配置"></a> 1. 编译运行：Coderunner配置</h4>
 <p>下载插件<code>coderunner</code>即可。</p>
 <img src="/2021/10/10/05/20210416215626549.png" srcset="/img/loading.gif" lazyload class="">
 <p>在<code>settings.json</code>中可以自定义编译程序的命令。</p>
 <p>我的自定义<code>coderunner</code>命令：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <br>    <span class="hljs-attr">&quot;code-runner.executorMap&quot;</span>: &#123;<br>        <span class="hljs-attr">&quot;cpp&quot;</span>: <span class="hljs-string">&quot; cd $dir &amp;&amp; g++ \&quot;$fileName\&quot; -o $fileNameWithoutExt -W -Wall -std=c++17 &amp;&amp;  ./$fileNameWithoutExt&quot;</span>,<br>        <span class="hljs-attr">&quot;c&quot;</span>  : <span class="hljs-string">&quot; cd $dir &amp;&amp; gcc \&quot;$fileName\&quot; -o $fileNameWithoutExt -W -Wall -std=c17   &amp;&amp;  ./$fileNameWithoutExt&quot;</span>,<br>        <span class="hljs-attr">&quot;s&quot;</span>  : <span class="hljs-string">&quot; cd $dir &amp;&amp; gcc \&quot;$fileName\&quot; -o $fileNameWithoutExt &amp;&amp; ./fileNameWithoutExt&quot;</span><br>    &#125;,<br>    <span class="hljs-attr">&quot;code-runner.clearPreviousOutput&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">&quot;code-runner.saveAllFilesBeforeRun&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">&quot;code-runner.saveFileBeforeRun&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">&quot;code-runner.showExecutionMessage&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">&quot;code-runner.runInTerminal&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">&quot;code-runner.preserveFocus&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">&quot;code-runner.ignoreSelection&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">&quot;launch&quot;</span>: &#123;<br>        <span class="hljs-attr">&quot;configurations&quot;</span>: [],<br>        <span class="hljs-attr">&quot;compounds&quot;</span>: []<br>    &#125;<br>    <br>&#125;<br><br></code></pre></td></tr></table></figure>
 <p>可以将此段内容插入到 <code>~/Library/ApplicationSupport/Code/User/settings.json</code>中。</p>
-<h4 id="调试launch.json-和-tasks.json-配置">2. 调试：launch.json 和 tasks.json 配置</h4>
+<h4 id="2-调试launchjson-和-tasksjson-配置"><a class="markdownIt-Anchor" href="#2-调试launchjson-和-tasksjson-配置"></a> 2. 调试：launch.json 和 tasks.json 配置</h4>
 <p>先安装插件 <code>CodeLLDB</code>。</p>
 <img src="/2021/10/10/05/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0tpcmluXzg2NQ==,size_16,color_FFFFFF,t_70-20211010184017573.png" srcset="/img/loading.gif" lazyload class="">
 <p>在工作区的<code>.vscode</code>文件夹内（如果没有的话就新建一个），新建两个名为 <code>tasks.json</code> 和 <code>launch.json</code> 的文件。</p>
@@ -268,7 +272,7 @@
 <p>保存好这两个json配置文件之后，在vscode左边边栏的“调试”中，应该就能看到cpp debug的字样。<img src="/2021/10/10/05/1.png" srcset="/img/loading.gif" lazyload class=""></p>
 <p>这个时候打上断点，点击cpp debug旁边的运行按钮，就可以调试了。</p>
 <img src="/2021/10/10/05/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0tpcmluXzg2NQ==,size_16,color_FFFFFF,t_70-20211010184117212.png" srcset="/img/loading.gif" lazyload class="">
-<h4 id="备注">备注：</h4>
+<h4 id="备注"><a class="markdownIt-Anchor" href="#备注"></a> 备注：</h4>
 <p>更详细的教程，可以移步本人在CSDN上的文章： <a target="_blank" rel="noopener" href="https://blog.csdn.net/Kirin_865/article/details/115772784?spm=1001.2014.3001.5501">网页链接</a></p>
 
             </div>
@@ -519,20 +523,5 @@
 <script  src="/js/boot.js" ></script>
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
