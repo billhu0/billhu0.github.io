@@ -26,12 +26,14 @@ sudo raspi-config，在界面中开启vnc和ssh即可
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
 <meta property="og:description" content="My raspberrypi configurations  启动VNC和SSH sudo raspi-config，在界面中开启vnc和ssh即可">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://billhu0.github.io/2021/09/12/02.%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/ssh_host_changed.png">
 <meta property="article:published_time" content="2021-09-12T15:16:05.000Z">
-<meta property="article:modified_time" content="2021-12-06T07:56:30.000Z">
+<meta property="article:modified_time" content="2022-02-11T11:01:59.712Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="RaspberryPi">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://billhu0.github.io/2021/09/12/02.%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/ssh_host_changed.png">
   
   <title>树莓派配置记录 - Bill Hu&#39;s Blog</title>
 
@@ -45,7 +47,7 @@ sudo raspi-config，在界面中开启vnc和ssh即可
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/stackoverflow-light.min.css" />
     
   
 
@@ -179,7 +181,7 @@ sudo raspi-config，在界面中开启vnc和ssh即可
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/ubuntu_14.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -205,7 +207,7 @@ sudo raspi-config，在界面中开启vnc和ssh即可
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.9k 字
+      2.6k 字
     </span>
   
 
@@ -252,14 +254,14 @@ sudo raspi-config，在界面中开启vnc和ssh即可
 <p><code>sudo raspi-config</code>，在界面中开启vnc和ssh即可</p>
 <p><em><span id="more"></span></em></p>
 <p>电脑ssh树莓派时，如果出现类似以下的错误：</p>
-<blockquote>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs gauss">$ ssh <span class="hljs-built_in">pi</span><span class="hljs-comment">@192.168.31.214</span><br><span class="hljs-comment">@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><br><span class="hljs-comment">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@@</span><span class="hljs-comment">@</span><br><span class="hljs-comment">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="hljs-comment">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="hljs-comment">It is also possible that a host key has just been changed.</span><br><span class="hljs-comment">........</span><br></code></pre></td></tr></table></figure>
-</blockquote>
+<img src="/2021/09/12/02.%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/ssh_host_changed.png" srcset="/img/loading.gif" lazyload class="">
 <p>解决方法是输入以下命令（将<code>your_ip_address_to_visit</code>换成树莓派的ip地址），然后重新连接：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -R [your_ip_address_to_visit]<br></code></pre></td></tr></table></figure>
 <h3 id="apt-get切换国内源解决下载太慢问题"><a class="markdownIt-Anchor" href="#apt-get切换国内源解决下载太慢问题"></a> apt-get切换国内源，解决下载太慢问题</h3>
-<p>首先查看linux（树莓派os为debian）版本：<code>lsb_release -a</code>，版本可能是buster</p>
-<p>然后看一下清华源地址： <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a></p>
+<p>首先查看linux（树莓派os为debian）版本：<code>lsb_release -a</code>，版本可能是buster或bullseye</p>
+<p>然后看一下清华源地址：</p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a></p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/">https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/</a></p>
 <p>内容（可以去访问查看，也可以直接复制下面的文字）：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free<br><span class="hljs-meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free<br><span class="hljs-meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free<br><span class="hljs-meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free<br><span class="hljs-meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br></code></pre></td></tr></table></figure>
 <p>把这段文字复制下来，然后更改<code>sources.list</code>文件。这个文件的位置在：<code>/etc/apt/sources.list</code>。可以用<code>sudo vim</code>或者 mousepad 去打开修改。</p>
@@ -276,7 +278,7 @@ sudo raspi-config，在界面中开启vnc和ssh即可
 <p>设置为默认shell：<code>chsh -s /bin/zsh</code>，重启终端或者重启树莓派生效</p>
 <p>2 安装oh my zsh</p>
 <p>一键安装脚本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">zsh -c &quot;$(curl -fsSL &#x27;https://host.mintimate.cn/fileHost/download/MTM1NjkzNzI1OTIxMDg0NjIwOQ==&#x27;)&quot;<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">zsh -c &quot;$(curl -fsSL &#x27;https://api.host.mintimate.cn/fileHost/public/download/1P0R&#x27;)&quot;<br></code></pre></td></tr></table></figure>
 <p>切换主题：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.zshrc<br><span class="hljs-meta">#</span><span class="bash"> mintimate<span class="hljs-string">&#x27;s theme: steeef</span></span><br>source ~/.zshrc<br></code></pre></td></tr></table></figure>
 <h3 id="mac上vim颜色高亮显示等设置"><a class="markdownIt-Anchor" href="#mac上vim颜色高亮显示等设置"></a> Mac上vim颜色高亮显示等设置</h3>
@@ -333,8 +335,8 @@ sudo raspi-config，在界面中开启vnc和ssh即可
                   <article class="post-next col-6">
                     
                     
-                      <a href="/1989/01/06/10/">
-                        <span class="hidden-mobile">Probability and Mathmatical Statistics Notes (unfinished)</span>
+                      <a href="/2021/09/07/01.hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -401,7 +403,7 @@ sudo raspi-config，在界面中开启vnc和ssh即可
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
   </div>
   
   <div class="statistics">
