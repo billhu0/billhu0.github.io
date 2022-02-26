@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://billhu.cn/about/index.html</loc>
+    
+    <lastmod>2022-02-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/google9aa88fed2d5722b6.html</loc>
     
     <lastmod>2022-02-26</lastmod>
@@ -164,15 +173,6 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/about/index.html</loc>
-    
-    <lastmod>2022-02-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/2021/11/11/08_algorithm/</loc>
     
     <lastmod>2022-02-14</lastmod>
@@ -223,6 +223,20 @@
   </url>
   
   <url>
+    <loc>https://billhu.cn/tags/HomeBridge/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/HomeKit/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/tags/C/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -238,20 +252,6 @@
   
   <url>
     <loc>https://billhu.cn/tags/VSCode/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/HomeBridge/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/HomeKit/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -307,20 +307,6 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/brew/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/frp/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/tags/C/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -329,6 +315,20 @@
   
   <url>
     <loc>https://billhu.cn/tags/Arduino/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/brew/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/frp/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -386,14 +386,14 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/categories/Linux/</loc>
+    <loc>https://billhu.cn/categories/macOS/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://billhu.cn/categories/macOS/</loc>
+    <loc>https://billhu.cn/categories/Linux/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
