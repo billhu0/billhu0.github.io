@@ -277,13 +277,6 @@
   </url>
   
   <url>
-    <loc>http://billhu0.github.io/tags/ssh/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://billhu0.github.io/tags/Math/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -298,7 +291,21 @@
   </url>
   
   <url>
+    <loc>http://billhu0.github.io/tags/ssh/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://billhu0.github.io/tags/brew/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://billhu0.github.io/tags/frp/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -313,13 +320,6 @@
   
   <url>
     <loc>http://billhu0.github.io/tags/Arduino/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://billhu0.github.io/tags/frp/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
