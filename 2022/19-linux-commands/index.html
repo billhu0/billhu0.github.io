@@ -16,15 +16,15 @@
   <meta name="author" content="BillHu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本文为一些Linux的常见命令（供自己备份）">
+    <meta name="description" content="sudo rm -rf &#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Some Linux shell commands">
 <meta property="og:url" content="https://billhu.cn/2022/19-linux-commands/index.html">
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
-<meta property="og:description" content="本文为一些Linux的常见命令（供自己备份）">
+<meta property="og:description" content="sudo rm -rf &#x2F;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-10T10:21:19.000Z">
-<meta property="article:modified_time" content="2022-02-22T07:19:26.988Z">
+<meta property="article:modified_time" content="2022-02-26T15:29:33.267Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -206,7 +206,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.4k words
+      5.5k words
     </span>
   
 
@@ -357,6 +357,59 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo service ssh restart<br></code></pre></td></tr></table></figure>
 </li>
 </ul>
+<h1 id="terminal-timeout-with-ssh"><a class="markdownIt-Anchor" href="#terminal-timeout-with-ssh"></a> Terminal timeout with SSH?</h1>
+<p>It is sometimes annoying that, when SSHing to a remote machine, the session gets timeout after minutes of inactivity, and you have to reinitiate the connection. Well, this can be solved under a simple fix.</p>
+<p>On the local machine, open <code>~/.ssh/config</code> and add the following line:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Host</span> *<br>    <span class="hljs-attribute">ServerAliveInterval</span> <span class="hljs-number">60</span><br></code></pre></td></tr></table></figure>
+<p>The meaning is, for any remote host, send a null packet every 60 seconds to keep the connection alive.</p>
+<p>The alternative is to configure on remote host. On the server, edit the <code>/etc/ssh/sshd_config</code> file, and find the following parameters: <code>ClientAliveInterval</code> and <code>ClientAliveCountMax</code>.</p>
+<ul>
+<li>
+<p><code>ClientAliveInterval</code> specifies the time (in seconds) that the server will wait before sending a null packet to client to keep connection alive.</p>
+</li>
+<li>
+<p><code>ClientAliveCountMax</code> defines the number of client alive messages which are sent without getting any msg from the client. When this limit is reached, the remote host will drop this connection to terminate this SSH session.</p>
+</li>
+</ul>
+<p>For instance, you can set</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ClientAliveInterval</span> <span class="hljs-number">1200</span><br><span class="hljs-attribute">ClientAliveCountMax</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<p>The timeout value is given by the product of the two parameters.<br />
+(timeoutvalue = <code>ClientAliveInterval</code> * <code>ClientAliveCountMax</code>)</p>
+<p>After that, reload OpenSSH-server service.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl reload sshd<br></code></pre></td></tr></table></figure>
+<h1 id="how-to-add-a-user"><a class="markdownIt-Anchor" href="#how-to-add-a-user"></a> How to add a user?</h1>
+<p>First we need to know the difference between <code>adduser</code> and <code>useradd</code>.</p>
+<p>Both commands are used for creating a new user, but follow different ways to execute it.</p>
+<p>The main difference is that,</p>
+<ul>
+<li><code>adduser</code> will setup the user’s home folder, password and other necessary functions, asking you to fill up the information.</li>
+<li><code>useradd</code> only creates a new user, without creating the home directory, adding password and so on.</li>
+</ul>
+<div class="note note-info">
+<p>For beginners, it is highly recommended to use <strong><code>adduser</code></strong> command.</p>
+</div>
+<p>Only <code>root</code> user is allowed to add or modify users. If you are a normal user, you need to use <code>sudo adduser</code> to add a user.</p>
+<h2 id="how-to-add-a-user-to-sudoers"><a class="markdownIt-Anchor" href="#how-to-add-a-user-to-sudoers"></a> How to add a user to sudoers</h2>
+<p>There’re two ways to grant sudo privileges to a user. The recommended one is to add the user to sudo group. An alternative is to edit the sudoers file.</p>
+<h3 id="add-the-user-to-sudo-group"><a class="markdownIt-Anchor" href="#add-the-user-to-sudo-group"></a> Add the user to <code>sudo</code> group</h3>
+<p>The easiest way to grant sudo privileges to a user is by adding it to the ‘sudo’ group. Members in this group can execute any command as ‘root’ via <code>sudo</code>.</p>
+<div class="note note-info">
+<p>A 'group' refers to a collection of users who are given a similar permissions. Note that one user may belong to multiple groups. </p>
+</div>
+<p>To add a user to ‘sudo’ group, use the following command (replace <code>USERNAME</code> with the username you want to grant sudo access):</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">usermod -aG sudo USERNAME<br></code></pre></td></tr></table></figure>
+<p>To ensure you have successfully granted the user sudo privileges, use <code>sudo whoami</code> and see the output. If the output is ‘root’, you succeeds.</p>
+<h3 id="add-the-user-to-sudoers-file"><a class="markdownIt-Anchor" href="#add-the-user-to-sudoers-file"></a> Add the user to <code>sudoers</code> file</h3>
+<p>This way is not recommended compared to the above one.</p>
+<p>The users’ and groups’ sudo privileges configurations are stored in <code>/etc/sudoers</code> file. You can configure the sudo access by modifying theis file, or by creating a new configuration file in <code>/etc/sudoers.d/</code> directory, since the files in this dir are included in the sudoers file.</p>
+<div class="note note-danger">
+<p>You should <strong>always use <code>visudo</code> command</strong> to edit the sudoers file. This command will check for syntax errors when you save it. If an error is detected, the file is not saved to prevent unexpected disaters.</p>
+</div>
+<p>Open the file by <code>visudo /etc/sudoers</code> and add the following line at the end of the file (change ‘USERNAME’ with the username you want to grant access to)</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">USERNAME <span class="hljs-keyword">ALL</span>=(<span class="hljs-keyword">ALL</span>:<span class="hljs-keyword">ALL</span>) NOPASSWD: <span class="hljs-keyword">ALL</span><br></code></pre></td></tr></table></figure>
+<p>This grants the user permission to execute all commands via sudo. If you want to give partial permissions only, consider this example:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">USERNAME ALL=(ALL:ALL) NOPASSWD: <span class="hljs-regexp">/bin/</span>rm, <span class="hljs-regexp">/bin/m</span>kdir<br></code></pre></td></tr></table></figure>
+<p>This allows only <code>mkdir</code> and <code>rm</code> commands to be run as root, which is safer under some special circumstances.</p>
 
             </div>
             <hr>
