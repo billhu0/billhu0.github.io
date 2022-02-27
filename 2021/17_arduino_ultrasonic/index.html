@@ -23,15 +23,15 @@
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
 <meta property="og:description" content="Arduino, LCD1602A, HC-SR04 configuration  LCD1602显示屏 引脚 4线连线：    Pin Connect to Explaination     VSS 接地 接地   VDD 5V电源 接电源   V0 电位器输出 对比度调整端（5V对比度最弱，接地对比度最高；可通过10kΩ电位器调整对比度）   RS 12口 寄存器选择，高电平——数据寄存器；">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://billhu.cn/2021/17_arduino_ultrasonic/IMG_3556.jpeg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/621b069c2ab3f51d913294b8.jpg">
 <meta property="article:published_time" content="2021-09-07T09:09:49.000Z">
-<meta property="article:modified_time" content="2022-02-22T11:58:39.348Z">
+<meta property="article:modified_time" content="2022-02-27T05:06:02.411Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="C">
 <meta property="article:tag" content="Arduino">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://billhu.cn/2021/17_arduino_ultrasonic/IMG_3556.jpeg">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/621b069c2ab3f51d913294b8.jpg">
   
   
   <title>用 Arduino uno + HC-SR04 做一个超声波测距仪 - Bill Hu&#39;s Blog</title>
@@ -355,7 +355,8 @@
 <h2 id="控制hc-sr04-代码实现"><a class="markdownIt-Anchor" href="#控制hc-sr04-代码实现"></a> 控制HC-SR04 代码实现</h2>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal.h&gt;</span></span><br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SR04_TRIG 9</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SR04_ECHO 8</span><br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>&#123;<br>    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// set up the LCD&#x27;s number of columns and rows</span><br>    pinMode(SR04_TRIG, OUTPUT);<br>    pinMode(SR04_ECHO, INPUT);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>&#123;<br>		<span class="hljs-comment">// send a 8 microseconds pulse to TRIG</span><br>    digitalWrite(SR04_TRIG, LOW);<br>    delayMicroseconds(<span class="hljs-number">2</span>);<br>    digitalWrite(SR04_TRIG, HIGH);<br>    delayMicroseconds(<span class="hljs-number">10</span>);<br>    digitalWrite(SR04_TRIG, LOW);<br><br>    <span class="hljs-comment">// `pulseIn` function waits until ECHO turn to HIGH, starts accumulating time</span><br>    <span class="hljs-comment">// until ECHO turn to LOW.</span><br>    <span class="hljs-keyword">float</span> temp = pulseIn(SR04_ECHO, HIGH);<br>    <span class="hljs-keyword">float</span> distance_cm = (temp * <span class="hljs-number">17</span>) / <span class="hljs-number">1000</span>;<br>    <br>    lcd.setCursor(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);<br>    lcd.print(<span class="hljs-string">&quot;DIS:&quot;</span>);<br>    lcd.print(distance_cm);<br>    lcd.print(<span class="hljs-string">&quot;cm&quot;</span>);<br>    lcd.print(<span class="hljs-string">&quot;   &quot;</span>);<br>  <br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="最终连线效果"><a class="markdownIt-Anchor" href="#最终连线效果"></a> 最终连线效果…</h2>
-<img src="/2021/17_arduino_ultrasonic/IMG_3556.jpeg" srcset="/img/loading.gif" lazyload class="" title="IMG_3556">
+<p><img src="https://pic.imgdb.cn/item/621b069c2ab3f51d913294b8.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+
             </div>
             <hr>
             <div>
