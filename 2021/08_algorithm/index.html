@@ -25,14 +25,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://billhu.cn/2021/08_algorithm/88w_i.jpg">
 <meta property="article:published_time" content="2021-11-11T13:32:00.000Z">
-<meta property="article:modified_time" content="2022-02-14T01:14:02.234Z">
+<meta property="article:modified_time" content="2022-02-28T06:17:18.187Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://billhu.cn/2021/08_algorithm/88w_i.jpg">
   
   
-  <title>Algorithm templates (C++) - Bill Hu&#39;s Blog</title><meta name="robots" content="noindex">
+  <title>Algorithm templates (C++) - Bill Hu&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -301,7 +301,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-function">std::string <span class="hljs-title">reverse</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span></span>&#123;<br>    std::string reverse_res;<br>    <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (num)&#123;<br>        reverse_res += (<span class="hljs-keyword">char</span>) (num % <span class="hljs-number">10</span>)+<span class="hljs-number">48</span>;<br>        num = num / <span class="hljs-number">10</span>;<br>        n++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> reverse_res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>&#123;<br>    std::ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    std::cin.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;#include &lt;stdio.h&gt;\n\n&quot;</span>;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;int main(void)&#123;\n&quot;</span>;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;    &quot;</span> &lt;&lt; <span class="hljs-string">&quot;int x;\n&quot;</span>;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;    &quot;</span> &lt;&lt; <span class="hljs-string">&quot;scanf(\&quot;%d\&quot;, &amp;x);\n&quot;</span>;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;    &quot;</span> &lt;&lt; <span class="hljs-string">&quot;switch(x)&#123;\n&quot;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">99999</span>; i++)&#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;        &quot;</span> &lt;&lt; <span class="hljs-string">&quot;case &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot;:\n&quot;</span>;<br>        std::string r = <span class="hljs-built_in">reverse</span>(i);<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;printf(\&quot;倒过来是 &quot;</span> &lt;&lt; r &lt;&lt; <span class="hljs-string">&quot;\\n\&quot;);\n&quot;</span>;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;printf(\&quot;&quot;</span> &lt;&lt; r.<span class="hljs-built_in">length</span>() &lt;&lt; <span class="hljs-string">&quot; 位数\\n\&quot;);\n&quot;</span>;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;printf(\&quot;个位数是 &quot;</span> &lt;&lt; r[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot;\\n\&quot;);\n&quot;</span>;<br>        <span class="hljs-keyword">if</span> (r.<span class="hljs-built_in">length</span>() &gt;= <span class="hljs-number">2</span>)&#123;<br>            std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;printf(\&quot;十位数是 &quot;</span> &lt;&lt; r[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-string">&quot;\\n\&quot;);\n&quot;</span>;  <br>            <span class="hljs-keyword">if</span> (r.<span class="hljs-built_in">length</span>() &gt;= <span class="hljs-number">3</span>)&#123;<br>                std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;printf(\&quot;百位数是 &quot;</span> &lt;&lt; r[<span class="hljs-number">2</span>] &lt;&lt; <span class="hljs-string">&quot;\\n\&quot;);\n&quot;</span>;  <br>                <span class="hljs-keyword">if</span> (r.<span class="hljs-built_in">length</span>() &gt;= <span class="hljs-number">4</span>)&#123;<br>                    std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;printf(\&quot;千位数是 &quot;</span> &lt;&lt; r[<span class="hljs-number">3</span>] &lt;&lt; <span class="hljs-string">&quot;\\n\&quot;);\n&quot;</span>;  <br>                    <span class="hljs-keyword">if</span> (r.<span class="hljs-built_in">length</span>() &gt;= <span class="hljs-number">5</span>)&#123;<br>                        std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;printf(\&quot;万位数是 &quot;</span> &lt;&lt; r[<span class="hljs-number">4</span>] &lt;&lt; <span class="hljs-string">&quot;\\n\&quot;);\n&quot;</span>;  <br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;            &quot;</span> &lt;&lt; <span class="hljs-string">&quot;break;\n&quot;</span>;<br>    &#125;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;    &#125;\n&quot;</span>;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;    return 0;\n&quot;</span>;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;&#125;\n&quot;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>将上面程序的输出写到一个<code>.c</code>文件即可得到88w行代码</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./xxx &gt; ./output.c<br></code></pre></td></tr></table></figure>
-<!-- flag of hidden posts -->
+
             </div>
             <hr>
             <div>
@@ -335,9 +335,21 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/10_hexo_katex/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">How to make hexo render LaTeX formulas correctly</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/07_wsl/">
+                        <span class="hidden-mobile">如何安装WSL</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
