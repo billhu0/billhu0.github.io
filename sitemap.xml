@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://billhu.cn/2022/21_hexo_server/</loc>
+    
+    <lastmod>2022-03-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/2022/18-ubt-swap/</loc>
     
     <lastmod>2022-02-28</lastmod>
@@ -190,15 +199,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://billhu.cn/2022/21_hexo_server/</loc>
-    
-    <lastmod>2022-02-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://billhu.cn/</loc>
@@ -258,6 +258,13 @@
   </url>
   
   <url>
+    <loc>https://billhu.cn/tags/hexo/</loc>
+    <lastmod>2022-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/tags/windows/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -266,13 +273,6 @@
   
   <url>
     <loc>https://billhu.cn/tags/WSL/</loc>
-    <lastmod>2022-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/hexo/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -301,6 +301,13 @@
   
   <url>
     <loc>https://billhu.cn/tags/Probability/</loc>
+    <lastmod>2022-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/brew/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -336,13 +343,6 @@
   
   <url>
     <loc>https://billhu.cn/tags/nginx/</loc>
-    <lastmod>2022-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/brew/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
