@@ -237,6 +237,13 @@
   </url>
   
   <url>
+    <loc>https://billhu.cn/tags/C/</loc>
+    <lastmod>2022-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/tags/macOS/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -244,7 +251,7 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/hexo/</loc>
+    <loc>https://billhu.cn/tags/VSCode/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -265,14 +272,7 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/C/</loc>
-    <lastmod>2022-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/VSCode/</loc>
+    <loc>https://billhu.cn/tags/hexo/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -307,21 +307,7 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/brew/</loc>
-    <lastmod>2022-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/tags/frp/</loc>
-    <lastmod>2022-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/Ubuntu/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -342,7 +328,21 @@
   </url>
   
   <url>
+    <loc>https://billhu.cn/tags/Ubuntu/</loc>
+    <lastmod>2022-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/tags/nginx/</loc>
+    <lastmod>2022-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/brew/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -358,14 +358,14 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/categories/hexo/</loc>
+    <loc>https://billhu.cn/categories/VSCode/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://billhu.cn/categories/VSCode/</loc>
+    <loc>https://billhu.cn/categories/hexo/</loc>
     <lastmod>2022-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
