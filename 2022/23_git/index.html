@@ -24,7 +24,7 @@
 <meta property="og:description" content="Some commonly used git commands and concepts, for beginners.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-14T11:24:01.000Z">
-<meta property="article:modified_time" content="2022-03-18T07:03:24.612Z">
+<meta property="article:modified_time" content="2022-03-26T06:11:20.391Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="linux">
@@ -219,7 +219,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      11k words
+      12k words
     </span>
   
 
@@ -340,7 +340,17 @@
 </li>
 </ul>
 <h3 id="deleting-a-file"><a class="markdownIt-Anchor" href="#deleting-a-file"></a> Deleting a file</h3>
-<p>x.</p>
+<p>In git, deleting a file is also a ‘modification’. In general, we can directly delete a file in file manager or using <code>rm</code> command.</p>
+<p>After doing this, git will notice that a file has been deleted, and will ask whether you want to delete the file. To ‘confirm’ deleting the file, use</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm xxx<br>git commit -m &quot;remove xxx&quot;<br></code></pre></td></tr></table></figure>
+<p>to delete the file from repo.</p>
+<div class="note note-info">
+            <p>After deleting a file manually, using <code>git rm xxx</code> and <code>git add xxx</code> (where <code>xxx</code> is the deleted file) makes no difference.</p>
+          </div>
+<p>The other condition is that, you delete a file by mistake. In this case, we can use</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">git checkout <span class="hljs-comment">-- xxx</span><br></code></pre></td></tr></table></figure>
+<p>to restore the file to its latest committed version. In fact, <code>git checkout --</code> replaces the file in repo to the file in workspace, so whether you modified or even deleted it, you can use this command to restore it at ease.</p>
+<p>However, note that files that have never been added to repos cannot be recovered.</p>
 <h2 id="branch-management"><a class="markdownIt-Anchor" href="#branch-management"></a> Branch management</h2>
 <h3 id="the-concept-of-branch"><a class="markdownIt-Anchor" href="#the-concept-of-branch"></a> The concept of ‘branch’</h3>
 <p>Now let’s try something a little more advanced.</p>
