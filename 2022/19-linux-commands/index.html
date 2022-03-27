@@ -24,7 +24,7 @@
 <meta property="og:description" content="Never do &#39;sudo rm -rf &#x2F;&#39;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-10T10:21:19.000Z">
-<meta property="article:modified_time" content="2022-03-27T06:51:20.204Z">
+<meta property="article:modified_time" content="2022-03-27T07:28:17.442Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +218,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      8.2k words
+      8.6k words
     </span>
   
 
@@ -268,25 +268,29 @@
 </ul>
 </li>
 </ul>
-<h1 id="与有关的符号"><a class="markdownIt-Anchor" href="#与有关的符号"></a> 与<code>$</code>有关的符号</h1>
-<h4 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h4>
+<h1 id="symbols-related-to"><a class="markdownIt-Anchor" href="#symbols-related-to"></a> Symbols related to <code>$</code></h1>
+<h4 id="variables"><a class="markdownIt-Anchor" href="#variables"></a> Variables</h4>
 <ul>
-<li><code>$xxx</code> 或 <code>$&#123;xxx&#125;</code> 指的是获取<strong>变量</strong>与环境变量的值</li>
+<li><code>$xxx</code> or <code>$&#123;xxx&#125;</code> fetches the value of a variable or the environment variable</li>
 </ul>
-<h4 id="计算结果"><a class="markdownIt-Anchor" href="#计算结果"></a> 计算结果</h4>
+<h4 id="calculate-the-result"><a class="markdownIt-Anchor" href="#calculate-the-result"></a> Calculate the result</h4>
 <ul>
-<li><code>$( )</code> 与 <code>``</code> (反引号) 指的是执行括号或反引号中的命令，并返回命令执行的输出</li>
-<li><code>$(( ))</code> <code>$[]</code> 指执行计算公式</li>
+<li>
+<p><code>$( )</code> and <code>``</code> (back quote) executes the command inside the bracket or back quote, and returns the output of that command</p>
+</li>
+<li>
+<p><code>$(( ))</code> <code>$[]</code> calculates the formula</p>
+</li>
 </ul>
-<h4 id="其它"><a class="markdownIt-Anchor" href="#其它"></a> 其它</h4>
+<h4 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h4>
 <ul>
-<li><code>$#</code> 表示argc，即参数个数</li>
-<li><code>$n</code> 表示第n个argv参数值，其中n=1,2,…,9</li>
-<li><code>$*</code> 表示所有argv值（可以超过9个），以一个单字符串显示所有向脚本传递的参数</li>
-<li><code>$@</code> 与<code>$*</code>大致相同，但是<code>$*</code>会把所有参数合并为一个参数，而<code>$@</code>会加上引号，传递多个参数</li>
-<li><code>$$</code> 表示shell这个程序自己的PID（Process ID）</li>
-<li><code>$?</code> 表示上一个指令的返回值，0表示success，其它值都表示发生错误</li>
-<li><code>$!</code> 表示上一个后台命令（即后台运行的最后一个进程）的PID</li>
+<li><code>$#</code> indicates ‘argc’, the count of arguments</li>
+<li><code>$n</code> is the value of the n-th argument, where n=1,2,…,9</li>
+<li><code>$*</code> shows all arguments’ value (can exceed 9) in a single string</li>
+<li><code>$@</code> is almost the same as <code>$*</code>, except that <code>$@</code> will add quotation marks to pass multiple arguments, unlike <code>$*</code> which combines all arguments into one single argument</li>
+<li><code>$$</code> is the PID (Process ID) of the shell itself</li>
+<li><code>$?</code> is the return value of the last command, where <code>0</code> indicates success, and all other values means an error</li>
+<li><code>$!</code> is the PID of the last background command (the last background process)</li>
 </ul>
 <h1 id="dpkg"><a class="markdownIt-Anchor" href="#dpkg"></a> <code>dpkg</code></h1>
 <ul>
