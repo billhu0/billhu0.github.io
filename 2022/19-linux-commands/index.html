@@ -24,7 +24,7 @@
 <meta property="og:description" content="Never do &#39;sudo rm -rf &#x2F;&#39;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-10T10:21:19.000Z">
-<meta property="article:modified_time" content="2022-03-20T16:21:11.790Z">
+<meta property="article:modified_time" content="2022-03-27T06:44:35.648Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +218,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.4k words
+      7.9k words
     </span>
   
 
@@ -294,35 +294,34 @@
 </ul>
 <h1 id="scp-命令"><a class="markdownIt-Anchor" href="#scp-命令"></a> <code>scp</code> 命令</h1>
 <p>scp命令可以使用基于ssh的文件拷贝操作。</p>
-<h3 id="从本地复制到远程"><a class="markdownIt-Anchor" href="#从本地复制到远程"></a> 从本地复制到远程</h3>
-<h4 id="复制文件"><a class="markdownIt-Anchor" href="#复制文件"></a> 复制文件</h4>
+<h3 id="copy-local-files-to-a-remote-host"><a class="markdownIt-Anchor" href="#copy-local-files-to-a-remote-host"></a> Copy local files to a remote host</h3>
+<h4 id="copy-files"><a class="markdownIt-Anchor" href="#copy-files"></a> Copy file(s)</h4>
 <ul>
-<li>复制本地文件到远程主机指定的远程文件夹名，文件名称不变</li>
+<li>Copy local files to remote host’s specified directory (the file name keeps same)</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs shell">scp path/to/local/file RemoteUsrName@IP:/path/to/remote/folder/<br></code></pre></td></tr></table></figure>
 <ul>
-<li>指定远程文件名称，复制时会重命名成你指定的文件名</li>
+<li>Specify the file name, and rename the file to specified filename when copying</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp path/to/local/file RemoteUsrName@IP:/path/to/remote/file<br></code></pre></td></tr></table></figure>
-<h4 id="复制文件夹"><a class="markdownIt-Anchor" href="#复制文件夹"></a> 复制文件夹</h4>
+<h4 id="copy-directory"><a class="markdownIt-Anchor" href="#copy-directory"></a> Copy directory</h4>
 <ul>
-<li>复制文件夹，但不会复制其中的隐藏文件（如<code>.git</code>文件夹）</li>
+<li>Copy a directory, but hidden files (such as <code>.git</code> directory) will not be copied</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp -r /path/to/local/folder RemoteUsrName@IP:/path/to/remote/folder/<br></code></pre></td></tr></table></figure>
 <ul>
-<li>复制文件夹，包括隐藏文件</li>
+<li>Copy a directory, including all hidden directories</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp -rp /path/to/local/folder RemoteUsrName@IP:/path/to/remote/folder/<br></code></pre></td></tr></table></figure>
-<h3 id="从远程下载到本地"><a class="markdownIt-Anchor" href="#从远程下载到本地"></a> 从远程下载到本地</h3>
-<p>只需要将上述的命令中后两个参数调换顺序即可，例如</p>
+<h3 id="download-remote-files-to-local-directory"><a class="markdownIt-Anchor" href="#download-remote-files-to-local-directory"></a> Download remote files to local directory</h3>
+<p>To download files, we only need to swap the last two arguments (file or directory path) in the commands. For example:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp -rp RemoteUsrName@IP:/path/to/remote/folder/  /path/to/local/folder`<br></code></pre></td></tr></table></figure>
 <div class="note note-info">
-  <p>scp与ssh是同协议，也会默认使用22端口</p>
-  <p>如果需要换个端口，需要在<code>scp</code>后加上<code>-P xxx</code>命令，如：<code>scp -P 10000 -rp /path/to/local/folder RemoteUsrName@IP:/path/to/remote/folder/</code>, 注意<strong><code>P</code>需要大写！</strong></p>
-</div>
+            <p><code>scp</code> uses the same protocal as <code>ssh</code>, and will also use port <code>22</code> by default.</p><p>If you want to use another port, you need to add <code>-P xxx</code> after <code>scp</code> command, for instance, <code>scp -P 10000 -rp /path/to/local/folder RemoteUsrName@IP:/path/to/remote/folder/</code>. Note that you have to use uppercase <code>P</code></p>
+          </div>
 <div class="note note-success">
-<p>如果想避免每次scp时输入密码，需要配置ssh公钥登录，请参考："<a href="/2022/14_ssh_keygen/" title="ssh-keygen 是什么？">ssh-keygen 是什么？</a> "</p>
-</div>
+            <p>Want to avoid typing password everytime you use <code>scp</code>? You need to configure public key authentication for ssh. For reference, <a href="/2022/14_ssh_keygen/" title="ssh-keygen 是什么？">ssh-keygen 是什么？</a></p>
+          </div>
 <h1 id="查看与更改hostname"><a class="markdownIt-Anchor" href="#查看与更改hostname"></a> 查看与更改hostname</h1>
 <ul>
 <li>
