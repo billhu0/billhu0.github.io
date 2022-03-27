@@ -24,7 +24,7 @@
 <meta property="og:description" content="Never do &#39;sudo rm -rf &#x2F;&#39;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-10T10:21:19.000Z">
-<meta property="article:modified_time" content="2022-03-27T06:44:35.648Z">
+<meta property="article:modified_time" content="2022-03-27T06:51:20.204Z">
 <meta property="article:author" content="BillHu">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +218,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.9k words
+      8.2k words
     </span>
   
 
@@ -290,10 +290,10 @@
 </ul>
 <h1 id="dpkg"><a class="markdownIt-Anchor" href="#dpkg"></a> <code>dpkg</code></h1>
 <ul>
-<li>Ubuntu / Debian 安装deb类型的软件：<code>sudo dpkg -i xxx.deb</code></li>
+<li>Install <code>deb</code> type softwares on Ubuntu or Debian: <code>sudo dpkg -i xxx.deb</code></li>
 </ul>
-<h1 id="scp-命令"><a class="markdownIt-Anchor" href="#scp-命令"></a> <code>scp</code> 命令</h1>
-<p>scp命令可以使用基于ssh的文件拷贝操作。</p>
+<h1 id="scp-commands"><a class="markdownIt-Anchor" href="#scp-commands"></a> <code>scp</code> Commands</h1>
+<p><code>scp</code> command can be used to copy files between local and remote, which is based on <code>ssh</code> protocal.</p>
 <h3 id="copy-local-files-to-a-remote-host"><a class="markdownIt-Anchor" href="#copy-local-files-to-a-remote-host"></a> Copy local files to a remote host</h3>
 <h4 id="copy-files"><a class="markdownIt-Anchor" href="#copy-files"></a> Copy file(s)</h4>
 <ul>
@@ -322,28 +322,28 @@
 <div class="note note-success">
             <p>Want to avoid typing password everytime you use <code>scp</code>? You need to configure public key authentication for ssh. For reference, <a href="/2022/14_ssh_keygen/" title="ssh-keygen 是什么？">ssh-keygen 是什么？</a></p>
           </div>
-<h1 id="查看与更改hostname"><a class="markdownIt-Anchor" href="#查看与更改hostname"></a> 查看与更改hostname</h1>
+<h1 id="view-and-change-hostname"><a class="markdownIt-Anchor" href="#view-and-change-hostname"></a> View and change hostname</h1>
 <ul>
 <li>
-<p>Ubuntu查看hostname：<code>hostname</code> 命令；或 <code>uname -n</code> 命令。</p>
+<p>See your hostname on Ubuntu: use <code>hostname</code> command or <code>uname -n</code> command</p>
 </li>
 <li>
-<p>Ubuntu更改hostname的方法：</p>
+<p>Change your hostname on Ubuntu:</p>
 <ul>
 <li>
-<p><code>sudo vim /etc/hostname</code> 永久修改hostname（重启才能生效）</p>
+<p><code>sudo vim /etc/hostname</code> to change the hostname forever (Restart to take effect)</p>
 </li>
 <li>
-<p><code>hostname xxx</code> 临时修改hostname（立即生效，但重启会变回去）</p>
+<p><code>hostname xxx</code> to change the hostname temporarily (takes effect immediately, but restart will restore the original hostname)</p>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="修改登录成功的提示"><a class="markdownIt-Anchor" href="#修改登录成功的提示"></a> 修改登录成功的提示</h1>
+<h1 id="modify-the-prompt-after-a-successful-login"><a class="markdownIt-Anchor" href="#modify-the-prompt-after-a-successful-login"></a> Modify the prompt after a successful login</h1>
 <ul>
 <li>
-<p>Ubuntu： <code>cd /etc/update-motd.d</code>，并修改这个文件夹里面的文件。</p>
-<p>（可以在脚本中加入 <code>exit 0</code> 命令，提前让其结束运行从而“取消”执行这个脚本）</p>
+<p>Ubuntu： <code>cd /etc/update-motd.d</code> and modify the shell scripts inside it.</p>
+<p>(You may add <code>exit 0</code> command near the beginning of the scripts, to ‘cancel’ executing it by letting it exit earlier)</p>
 </li>
 </ul>
 <h1 id="cannot-ssh-to-your-machine"><a class="markdownIt-Anchor" href="#cannot-ssh-to-your-machine"></a> Cannot SSH to your machine?</h1>
