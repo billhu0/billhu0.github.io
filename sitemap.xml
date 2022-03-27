@@ -276,13 +276,6 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/hexo/</loc>
-    <lastmod>2022-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/tags/windows/</loc>
     <lastmod>2022-03-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -291,6 +284,13 @@
   
   <url>
     <loc>https://billhu.cn/tags/WSL/</loc>
+    <lastmod>2022-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/hexo/</loc>
     <lastmod>2022-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -339,20 +339,6 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/Ubuntu/</loc>
-    <lastmod>2022-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/nginx/</loc>
-    <lastmod>2022-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/tags/C/</loc>
     <lastmod>2022-03-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -361,6 +347,20 @@
   
   <url>
     <loc>https://billhu.cn/tags/Arduino/</loc>
+    <lastmod>2022-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/Ubuntu/</loc>
+    <lastmod>2022-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/nginx/</loc>
     <lastmod>2022-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
