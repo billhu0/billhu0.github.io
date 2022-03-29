@@ -227,7 +227,14 @@
 
   
   <url>
-    <loc>https://billhu.cn/tags/C/</loc>
+    <loc>https://billhu.cn/tags/Linux/</loc>
+    <lastmod>2022-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/RaspberryPi/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -241,21 +248,7 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/VSCode/</loc>
-    <lastmod>2022-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/Linux/</loc>
-    <lastmod>2022-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/RaspberryPi/</loc>
+    <loc>https://billhu.cn/tags/hexo/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -276,7 +269,14 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/hexo/</loc>
+    <loc>https://billhu.cn/tags/C/</loc>
+    <lastmod>2022-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/VSCode/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -390,13 +390,6 @@
 
   
   <url>
-    <loc>https://billhu.cn/categories/VSCode/</loc>
-    <lastmod>2022-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/categories/Raspi-Arduino/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -405,6 +398,13 @@
   
   <url>
     <loc>https://billhu.cn/categories/hexo/</loc>
+    <lastmod>2022-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/categories/VSCode/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
