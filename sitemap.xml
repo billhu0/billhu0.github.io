@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://billhu.cn/2022/15_brew_tsinghua/</loc>
+    
+    <lastmod>2022-04-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/2022/20-ubuntu-config/</loc>
     
     <lastmod>2022-04-01</lastmod>
@@ -102,15 +111,6 @@
   
   <url>
     <loc>https://billhu.cn/2022/14_ssh_keygen/</loc>
-    
-    <lastmod>2022-02-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/2022/15_brew_tsinghua/</loc>
     
     <lastmod>2022-02-28</lastmod>
     
@@ -255,13 +255,6 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/C/</loc>
-    <lastmod>2022-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/tags/macOS/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -269,14 +262,21 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/VSCode/</loc>
+    <loc>https://billhu.cn/tags/hexo/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/hexo/</loc>
+    <loc>https://billhu.cn/tags/C/</loc>
+    <lastmod>2022-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/VSCode/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -397,14 +397,14 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/categories/VSCode/</loc>
+    <loc>https://billhu.cn/categories/hexo/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://billhu.cn/categories/hexo/</loc>
+    <loc>https://billhu.cn/categories/VSCode/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
