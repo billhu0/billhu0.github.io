@@ -1,21 +1,14 @@
-
-
 <!DOCTYPE html>
 <html lang="en" data-default-color-scheme=auto>
-
-
-
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/code.png">
   <link rel="icon" href="/img/code.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="BillHu">
   <meta name="keywords" content="">
-  
     <meta name="description" content="本文适用于 x86_64 架构的 Ubuntu Desktop 或 Ubuntu Server。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(unfinished) Ubuntu configs">
@@ -29,43 +22,17 @@
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
-  
-  
   <title>(unfinished) Ubuntu configs - Bill Hu&#39;s Blog</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
-
-
+  <link  rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="/css/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/css/hint.min.css" />
+      <link  rel="stylesheet" href="/css/github-gist.min.css" />
+    <link  rel="stylesheet" href="/css/jquery.fancybox.min.css" />
 <!-- 主题依赖的图标库，不要自行修改 -->
-
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-
-
-
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
 <link  rel="stylesheet" href="/css/main.css" />
-
 <!-- 自定义样式保持在最底部 -->
-
-
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     var CONFIG = {"hostname":"billhu.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":30,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
@@ -74,11 +41,8 @@
   <script  src="/js/color-schema.js" ></script>
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="/css/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
-
-
 <body>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
@@ -86,107 +50,63 @@
     <a class="navbar-brand" href="/">
       <strong>Bill Hu&#39;s Blog</strong>
     </a>
-
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
-
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
             </li>
-          
-        
-          
-          
-          
-          
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
             </li>
-          
-        
-          
-          
-          
-          
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
             </li>
-          
-        
-          
-          
-          
-          
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
             </li>
-          
-        
-          
-          
-          
-          
             <li class="nav-item">
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
                 Links
               </a>
             </li>
-          
-        
-          
-          
-          
-          
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
             </li>
-          
-        
-        
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
-        
-        
           <li class="nav-item" id="color-toggle-btn">
             <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
-        
       </ul>
     </div>
   </div>
 </nav>
-
     <div class="banner" id="banner" parallax=true
          style="background: url('https://pic.imgdb.cn/item/621b03fb2ab3f51d912cf1f2.jpg') no-repeat center center;
            background-size: cover;">
@@ -194,54 +114,31 @@
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="(unfinished) Ubuntu configs">
-              
             </span>
-
-            
               <div class="mt-3">
-  
     <span class="post-meta mr-2">
       <i class="iconfont icon-author" aria-hidden="true"></i>
       BillHu
     </span>
-  
-  
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
       <time datetime="2022-02-14 20:17" pubdate>
         February 14, 2022 pm
       </time>
     </span>
-  
 </div>
-
 <div class="mt-1">
-  
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
       2.9k words
     </span>
-  
-
-  
-
-  
-  
 </div>
-
-            
           </div>
-
-          
         </div>
       </div>
     </div>
   </header>
-
   <main>
-    
-      
-
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
@@ -251,7 +148,6 @@
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">(unfinished) Ubuntu configs</h1>
-            
             <div class="markdown-body">
               <div class="note note-info">
 <p>本文适用于 `x86_64` 的 Ubuntu Desktop 或 Ubuntu Server。</p>
@@ -298,92 +194,56 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.vimrc <br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 在里面添加这些内容————————————————————————————————————————————</span><br><br>syntax on &quot; 语法高亮<br>set tabstop=4  &quot; Tab键的宽度<br>set softtabstop=4<br>set shiftwidth=4  &quot;  统一缩进为4<br>set nu   &quot; 显示行号<br>colorscheme pablo   &quot; 设置颜色主题<br>set ruler   &quot; 在编辑过程中，在右下角显示光标位置的状态行<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 保存并退出，下次进入vim会自动生效—————————————————————————————————</span><br><br></code></pre></td></tr></table></figure>
 <h2 id="一些需要安装的东西"><a class="markdownIt-Anchor" href="#一些需要安装的东西"></a> 一些需要安装的东西</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install gcc g++ gcc-multilib make cmake gdb cgdb valgrind -y<br></code></pre></td></tr></table></figure>
-
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
-                
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
-                    
                       <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
-                    
                   </div>
-                
-                
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
-                    
                       <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
-                    
                       <a class="hover-with-bg" href="/tags/Ubuntu/">Ubuntu</a>
-                    
                   </div>
-                
               </div>
-              
                 <p class="note note-warning">
-                  
                     Unless otherwise stated, all articles on this blog uses <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 </a>. Please indicate the source of reproduction!
-                  
                 </p>
-              
-              
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
-                    
-                    
                       <a href="/2022/21_hexo_server/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Deploy hexo to your personal server</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
-                    
                   </article>
                   <article class="post-next col-6">
-                    
-                    
                       <a href="/2022/18-ubt-swap/">
                         <span class="hidden-mobile">How to configure swap on Ubuntu</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
-                    
                   </article>
                 </div>
-              
             </div>
-
-            
           </article>
         </div>
       </div>
     </div>
-    
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
         <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
-
       </div>
-    
   </div>
 </div>
-
 <!-- Custom -->
-
-
-    
-
-    
       <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
-    
-
-    
       <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -405,18 +265,11 @@
     </div>
   </div>
 </div>
-    
-
-    
   </main>
-
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration_en.js"></script> </div> 
   </div>
-  
-
-  
   <!-- 备案信息 -->
   <div class="beian">
     <span>
@@ -424,19 +277,11 @@
         沪ICP备2022004216号
       </a>
     </span>
-    
   </div>
-
-
-  
 </footer>
-
-
   <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
+  <script  src="/js/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="/css/nprogress.min.css" />
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
@@ -444,76 +289,26 @@
       NProgress.done();
     })
   </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/jquery.min.js" ></script>
+<script  src="/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
-
 <!-- Plugins -->
-
-
   <script  src="/js/local-search.js" ></script>
-
-
-
-  
     <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+    <script  src="/js/tocbot.min.js" ></script>
+    <script  src="/js/jquery.fancybox.min.js" ></script>
+    <script  src="/js/anchor.min.js" ></script>
+    <script defer src="/js/clipboard.min.js" ></script>
+  <script  src="/js/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
-      
         typing(title);
-      
     })(window, document);
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
-
 </body>
 </html>
