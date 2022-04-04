@@ -276,13 +276,6 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/hexo/</loc>
-    <lastmod>2022-04-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/tags/windows/</loc>
     <lastmod>2022-04-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -297,7 +290,21 @@
   </url>
   
   <url>
+    <loc>https://billhu.cn/tags/hexo/</loc>
+    <lastmod>2022-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/tags/LaTeX/</loc>
+    <lastmod>2022-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/ssh/</loc>
     <lastmod>2022-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -318,21 +325,7 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/ssh/</loc>
-    <lastmod>2022-04-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://billhu.cn/tags/brew/</loc>
-    <lastmod>2022-04-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/frp/</loc>
     <lastmod>2022-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -347,6 +340,13 @@
   
   <url>
     <loc>https://billhu.cn/tags/Arduino/</loc>
+    <lastmod>2022-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://billhu.cn/tags/frp/</loc>
     <lastmod>2022-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
