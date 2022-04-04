@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Deploy free SSL certificates for all your nginx websites</title>
+    <link href="/2022/26-letseccrypt-ssl/"/>
+    <url>/2022/26-letseccrypt-ssl/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-info">            <p><strong>Offical websites for reference</strong></p><p>“Let’s Encrypt” page: <a href="https://letsencrypt.org/getting-started/">https://letsencrypt.org/getting-started/</a></p><p>“Certbot” application: <a href="https://certbot.eff.org/instructions">https://certbot.eff.org/instructions</a></p>          </div><h2 id="step-1-install-certbot-and-corresponding-plugins"><a class="markdownIt-Anchor" href="#step-1-install-certbot-and-corresponding-plugins"></a> Step 1. Install certbot and corresponding plugins</h2><p>Execute the following in terminal to get <code>certbot</code></p><figure class="highlight shell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs shell">sudo apt install certbot -y<br></code></pre></td></tr></table></figure><p>If you would like to configure nginx after that, install <code>python3-certbot-nginx</code> additionally, otherwise an error ‘The requested nginx plugin does not appear to be installed’ may happen.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install python3-certbot-nginx<br></code></pre></td></tr></table></figure><h2 id="step-2-run-certbot"><a class="markdownIt-Anchor" href="#step-2-run-certbot"></a> Step 2. Run certbot</h2><h3 id="either-get-and-install-your-certificates-automatically"><a class="markdownIt-Anchor" href="#either-get-and-install-your-certificates-automatically"></a> Either get and install your certificates automatically …</h3><p>Run the following command to get a certificate and have certbot automatically edit your nginx configuration, all in one single step.</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">sudo certbot <span class="hljs-comment">--nginx</span><br></code></pre></td></tr></table></figure><p>certbot will read your nginx configurations at <code>/etc/nginx/</code>, list all your http sites, and after a certificate is applied, it will change configurations (modify <code>listen 80</code> to <code>listen 443 ssl</code>, and use 301 to redirect http requests to https-enabled site).</p><p>Follow the prompts on screen, and everything is done.</p><h3 id="or-just-get-a-certificate"><a class="markdownIt-Anchor" href="#or-just-get-a-certificate"></a> Or, just get a certificate</h3><p>To only apply for a certificate, and do the nginx configuration modifications by hand, use the following command.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo certbot certonly --nginx<br></code></pre></td></tr></table></figure><p>After you have set up properly, visit your website to check if a lock icon appears in the URL bar of your browser.</p><h2 id="how-to-renew-the-certificates"><a class="markdownIt-Anchor" href="#how-to-renew-the-certificates"></a> How to renew the certificates?</h2><p>The free certificates are only valid for 90-days, but can be renewed for unlimited times. The certbot packages come with a cron job or systemd timer which will renew the certificates automatically before they expire.</p><p>You can test automatica renewal for your certificates by running this command</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo certbot renew --dry-run<br></code></pre></td></tr></table></figure><p>To renew, use</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo certbot renew<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>nginx</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nginx</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Git commands (for beginners)</title>
     <link href="/2022/23_git/"/>
     <url>/2022/23_git/</url>
