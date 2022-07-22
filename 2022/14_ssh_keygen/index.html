@@ -23,15 +23,12 @@
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
 <meta property="og:description" content="ssh-keygen可以用来生成ssh的秘钥和公钥。通常可以用来自动登录远程服务器，这样可以省去每次ssh时手动输入密码的麻烦；以及使用SSH协议访问git仓库。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://billhu.cn/2022/14_ssh_keygen/14_ssh_keygen/ssh-keygen%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png">
-<meta property="og:image" content="https://billhu.cn/2022/14_ssh_keygen/14_ssh_keygen/ssh-copy-id%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png">
 <meta property="article:published_time" content="2022-02-05T04:38:00.000Z">
 <meta property="article:modified_time" content="2022-02-28T06:17:12.000Z">
 <meta property="article:author" content="Bill Hu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://billhu.cn/2022/14_ssh_keygen/14_ssh_keygen/ssh-keygen%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png">
   
   
   
@@ -299,7 +296,7 @@
 <p>在<strong>本地</strong>机器的终端，直接执行这个<code>ssh-keygen</code>命令即可（linux/macOS/Windows Terminal都支持这个命令）</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">ssh-keygen<br></code></pre></td></tr></table></figure>
 <p>系统会询问你要把文件保存在哪里，<strong>可以直接一路回车</strong>，默认位置是 <code>~/.ssh</code>，会在这个目录下生成两个文件: <code>id_rsa</code> (private key) 和 <code>id_rsa.pub</code> (public key)。</p>
-<p><img src="14_ssh_keygen/ssh-keygen%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+
 <blockquote>
 <p>大部分网上的教程会让你执行这个命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -t rsa -C &quot;xxx@xxxx.com&quot;<br></code></pre></td></tr></table></figure>
@@ -317,7 +314,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-copy-id -i ~/.ssh/id_rsa.pub USERNAME@HOSTIP<br></code></pre></td></tr></table></figure>
 <p>把本地生成的public key拷贝到远程主机上。这个命令会自动给远程主机的<code>~/.ssh</code>, <code>~/.ssh/authorized_keys</code>设置合适的权限并把本地公钥复制过去。</p>
 <p>执行这个命令的过程中系统会询问远程服务器的密码，正常输入即可，整个过程会提示以下内容：</p>
-<p><img src="14_ssh_keygen/ssh-copy-id%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+
 <p>接下来就可以直接在本地ssh到远程主机了，不再需要手动输入密码。远程主机会允许所有拥有与这个public key对应的private key的用户连接。</p>
 <ul>
 <li>Windows</li>

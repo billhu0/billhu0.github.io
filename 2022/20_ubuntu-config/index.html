@@ -23,15 +23,12 @@
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
 <meta property="og:description" content="本文适用于 x86_64 架构的 Ubuntu Desktop 或 Ubuntu Server。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://billhu.cn/2022/20_ubuntu-config/20_ubuntu-config/ubuntu_apt_gui.jpg">
-<meta property="og:image" content="https://billhu.cn/2022/20_ubuntu-config/20_ubuntu-config/ubuntu_apt_gui2.png">
 <meta property="article:published_time" content="2022-02-14T12:17:07.000Z">
 <meta property="article:modified_time" content="2022-04-18T12:10:33.000Z">
 <meta property="article:author" content="Bill Hu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://billhu.cn/2022/20_ubuntu-config/20_ubuntu-config/ubuntu_apt_gui.jpg">
   
   
   
@@ -297,8 +294,8 @@
 <p>不建议用清华源！</p>
 </div>
 <p>如果是有图形界面的ubuntu，可以直接进入设置换源，如图：</p>
-<p><img src="20_ubuntu-config/ubuntu_apt_gui.jpg" srcset="/img/loading.gif" lazyload alt="" /><br />
-<img src="20_ubuntu-config/ubuntu_apt_gui2.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+
+
 <p>或者手动修改 <code>/etc/apt/sources.list</code> 换源，以中科大源为例：</p>
 <p>对于 ubuntu 20.04（版本号focal），可使用下面的源</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs awk">deb https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal main restricted universe multiverse<br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal main restricted universe multiverse<br>deb https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-updates main restricted universe multiverse<br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-updates main restricted universe multiverse<br>deb https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-backports main restricted universe multiverse<br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-backports main restricted universe multiverse<br>deb https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-security main restricted universe multiverse<br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-security main restricted universe multiverse<br>deb https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-proposed main restricted universe multiverse<br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.ustc.edu.cn<span class="hljs-regexp">/ubuntu/</span> focal-proposed main restricted universe multiverse<br></code></pre></td></tr></table></figure>
