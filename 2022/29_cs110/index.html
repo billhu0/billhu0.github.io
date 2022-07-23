@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -23,6 +23,28 @@
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
 <meta property="og:description" content="CS110 Computer architecture I lecture notes, spring 2022">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/siji.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/use-s0-as-a-frame-pointer.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/fp.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/instruction_formats_all.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/CMOS-NPchannel.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/law-of-boolean-algebra.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/flip-flop-timing-register.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/single-cycle-cpu-datapath.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/control-logic-truth-table.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/Pipelined-datapath.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/forwarding.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/forwarding-datapath.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/control-hazard-simple.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/Modern-complex-inorder-pipeline.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/amoswap.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/linear-page-table.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/TLB.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/hierarchical-page-table-walk.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/operation-of-DMA-transfer.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/Hamming-code-coverage.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/heartbleed.png">
+<meta property="og:image" content="https://billhu.cn/2022/29_cs110/rowhammer.png">
 <meta property="article:published_time" content="2022-06-22T08:44:18.000Z">
 <meta property="article:modified_time" content="2022-06-22T09:50:40.546Z">
 <meta property="article:author" content="Bill Hu">
@@ -30,6 +52,7 @@
 <meta property="article:tag" content="C">
 <meta property="article:tag" content="Lecture Notes">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://billhu.cn/2022/29_cs110/siji.png">
   
   
   
@@ -86,7 +109,9 @@
 
 
   
-<meta name="generator" content="Hexo 6.2.0"></head>
+<!-- hexo injector head_end start -->
+<script async defer data-website-id="068f1627-b763-4c2d-a8ce-17b7c30de5e2" src="https://umami.billhu.cn/umami.js"></script>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
@@ -304,7 +329,7 @@
 <p>includes: return address; arguments; space for local variables</p>
 <p><code>strlen()</code> does not count the <code>\0</code> at the end. <code>sizeof</code> will do.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">func</span><span class="hljs-params">()</span>&#123;<br>		<span class="hljs-type">char</span> a;        <span class="hljs-comment">// stack</span><br>		<span class="hljs-type">static</span> <span class="hljs-type">char</span> b; <span class="hljs-comment">// static/global</span><br>		<span class="hljs-type">char</span> c[] = <span class="hljs-string">&quot;&quot;</span>; <span class="hljs-comment">// stack</span><br>		<span class="hljs-type">char</span> *d = <span class="hljs-string">&quot;&quot;</span>;  <span class="hljs-comment">// static</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
+<img src="/2022/29_cs110/siji.png" srcset="/img/loading.gif" lazyload class="">
 <h1 id="lecture-4-riscv-intro"><a class="markdownIt-Anchor" href="#lecture-4-riscv-intro"></a> Lecture 4. Riscv intro</h1>
 <h3 id="isa-instruction-set-architectures"><a class="markdownIt-Anchor" href="#isa-instruction-set-architectures"></a> ISA - Instruction Set architectures</h3>
 <p><strong>RISC philosophy:</strong> <strong>Reduced Instruction Set Computing:</strong></p>
@@ -377,8 +402,8 @@
 <p>Therefore, at the start, <strong>save <code>s0</code> and then have the Frame Pointer point to one below the sp when you were called</strong>. Then, <strong>address local variables off the <code>fp</code> rather than the <code>sp</code></strong>.</p>
 <p>simplifies the compiler and debugger.</p>
 <p>Note: it isn’t necessary in C, and since it’s a callee saved reg, it doesn’t matter</p>
-
-
+<img src="/2022/29_cs110/use-s0-as-a-frame-pointer.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2022/29_cs110/fp.png" srcset="/img/loading.gif" lazyload class="">
 <h3 id="instructions"><a class="markdownIt-Anchor" href="#instructions"></a> Instructions</h3>
 <p>6-basic types of instruction formats</p>
 <ul>
@@ -389,7 +414,7 @@
 <li><strong>U-format</strong> for 20-bit upper imm</li>
 <li><strong>J-format</strong> for jumps(minor variant of U, called <strong>UJ</strong> before)</li>
 </ul>
-
+<img src="/2022/29_cs110/instruction_formats_all.png" srcset="/img/loading.gif" lazyload class="">
 <h1 id="lecture-7-riscv-multi-float"><a class="markdownIt-Anchor" href="#lecture-7-riscv-multi-float"></a> Lecture 7. Riscv multi &amp; float</h1>
 <h3 id="floating-point-representation"><a class="markdownIt-Anchor" href="#floating-point-representation"></a> Floating point representation</h3>
 <p>SEM / SES / sign, exponent, significand mantissa.</p>
@@ -461,16 +486,16 @@
 <p>dynamically linked libraries: link at runtime</p>
 <h1 id="lecture-9-synchronous-digital-systems"><a class="markdownIt-Anchor" href="#lecture-9-synchronous-digital-systems"></a> Lecture 9. Synchronous Digital Systems</h1>
 <p><strong>CMOS</strong> (complementary metal-oxide on Semiconductor 互补金属氧化物半导体)</p>
-
+<img src="/2022/29_cs110/CMOS-NPchannel.png" srcset="/img/loading.gif" lazyload class="">
 <p>CMOS circuit rules: Don’t pass weak values! Use N-type transistors only to pass zero, P only 1.</p>
 <h4 id="laws-of-boolean-algebra"><a class="markdownIt-Anchor" href="#laws-of-boolean-algebra"></a> Laws of Boolean algebra</h4>
-
+<img src="/2022/29_cs110/law-of-boolean-algebra.png" srcset="/img/loading.gif" lazyload class="">
 <p>Note the last one ： <strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mrow><mi>X</mi><mi>Y</mi></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mo>+</mo><mover accent="true"><mi>Y</mi><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{XY} = \overline{X} + \overline{Y}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span></strong>  !!!</p>
 <h4 id="type-of-circuits"><a class="markdownIt-Anchor" href="#type-of-circuits"></a> Type of circuits</h4>
 <p>SDS consist of 2 basic types of circuits: <strong>CL</strong> (combinational logic) and <strong>SL</strong>(sequential logic)</p>
 <h4 id="flip-flop-timing"><a class="markdownIt-Anchor" href="#flip-flop-timing"></a> Flip-flop timing</h4>
 <p>(Edge-triggered d-type flip flop)</p>
-
+<img src="/2022/29_cs110/flip-flop-timing-register.png" srcset="/img/loading.gif" lazyload class="">
 <h4 id="time-constraint-for-sds"><a class="markdownIt-Anchor" href="#time-constraint-for-sds"></a> Time constraint for SDS</h4>
 <ul>
 <li><strong>Max hold time</strong> = min CL delay + clk-to-q delay  (hold time 不能长于它的input会发生改变的时间，否则不能保持stable)</li>
@@ -485,13 +510,13 @@
 <li><strong>MEM</strong> / memory access</li>
 <li><strong>WB</strong> / Register write</li>
 </ul>
-
-
+<img src="/2022/29_cs110/single-cycle-cpu-datapath.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2022/29_cs110/control-logic-truth-table.png" srcset="/img/loading.gif" lazyload class="">
 <h1 id="lecture-13-pipelining"><a class="markdownIt-Anchor" href="#lecture-13-pipelining"></a> Lecture 13. Pipelining</h1>
 <p><strong>Pipelining</strong>: <strong>higher throughput</strong> at the cost of higher latency</p>
 <h3 id="pipelined-risc-v-datapath"><a class="markdownIt-Anchor" href="#pipelined-risc-v-datapath"></a> Pipelined Risc-v datapath</h3>
 <p>每个stage中间添加寄存器</p>
-
+<img src="/2022/29_cs110/Pipelined-datapath.png" srcset="/img/loading.gif" lazyload class="">
 <h3 id="hazards"><a class="markdownIt-Anchor" href="#hazards"></a> Hazards</h3>
 <h4 id="1-structural-hazard"><a class="markdownIt-Anchor" href="#1-structural-hazard"></a> 1. Structural hazard</h4>
 <p>Conflict use of a resource.</p>
@@ -519,9 +544,9 @@
 </ul>
 </li>
 </ul>
-
+<img src="/2022/29_cs110/forwarding.png" srcset="/img/loading.gif" lazyload class="">
 <p>​			Forwarding datapath</p>
-
+<img src="/2022/29_cs110/forwarding-datapath.png" srcset="/img/loading.gif" lazyload class="">
 <ul>
 <li><strong>Load data hazard</strong>
 <ul>
@@ -536,7 +561,7 @@
 <li>Execute sequentially (always predict branch not taken)</li>
 </ul>
 <p>​		Kill instructions after branch if taken (luckily no state is changed at this time)</p>
-
+<img src="/2022/29_cs110/control-hazard-simple.png" srcset="/img/loading.gif" lazyload class="">
 <ul>
 <li><strong>Branch prediction</strong>:
 <ul>
@@ -611,7 +636,7 @@
 <li>Issue: assign instruction to functional unit.</li>
 </ul>
 <h4 id="modern-complex-in-order-pipeline"><a class="markdownIt-Anchor" href="#modern-complex-in-order-pipeline"></a> Modern complex in-order pipeline</h4>
-
+<img src="/2022/29_cs110/Modern-complex-inorder-pipeline.png" srcset="/img/loading.gif" lazyload class="">
 <h3 id="static-multiple-issue-aka-vliw-very-long-instruction-word"><a class="markdownIt-Anchor" href="#static-multiple-issue-aka-vliw-very-long-instruction-word"></a> Static Multiple issue (aka VLIW (very long instruction word) )</h3>
 <p>一次取出两条指令，如果一条整数/mem，一条浮点，就同时issue。</p>
 <p>现代的CPU，4-issue再往上成本就很大了。</p>
@@ -846,7 +871,7 @@
 </li>
 <li>
 <p>Example:</p>
-
+<img src="/2022/29_cs110/amoswap.png" srcset="/img/loading.gif" lazyload class="">
 </li>
 </ul>
 <h1 id="l22-os"><a class="markdownIt-Anchor" href="#l22-os"></a> L22 OS</h1>
@@ -916,7 +941,7 @@
 <li><strong>status bits</strong> for protection and usage (R/W/exec 可读?可写?可执行?)</li>
 </ul>
 <p>OS sets PT base register(page table的基地址,指向PT开头) whenever active user process changes</p>
-
+<img src="/2022/29_cs110/linear-page-table.png" srcset="/img/loading.gif" lazyload class="">
 <p><strong>Page fault</strong>: an inst references a memory page that isn’t in DRAM 发现一块虚拟内存对应的是disk page number，在硬盘上。</p>
 <p>Page fault handler does the following:</p>
 <ul>
@@ -931,10 +956,10 @@
 <p><strong>Address translation and protection</strong>:</p>
 <p>VPN  --&gt; protection check &amp; address translation  --&gt;  PPN</p>
 <h3 id="translation-lookaside-buffers-tlb"><a class="markdownIt-Anchor" href="#translation-lookaside-buffers-tlb"></a> Translation Lookaside Buffers (TLB)</h3>
-
+<img src="/2022/29_cs110/TLB.png" srcset="/img/loading.gif" lazyload class="">
 <p>Usually fully associative: each entry maps a large page --&gt; less spacial locality across pages</p>
 <p><strong>TLB Reach</strong>: size of the largest virtual addr space that can be simultaneously mapped by TLB</p>
-
+<img src="/2022/29_cs110/hierarchical-page-table-walk.png" srcset="/img/loading.gif" lazyload class="">
 <h1 id="lecture-24-fpga"><a class="markdownIt-Anchor" href="#lecture-24-fpga"></a> Lecture 24 FPGA</h1>
 <h3 id="embedded-system"><a class="markdownIt-Anchor" href="#embedded-system"></a> Embedded System</h3>
 <p>Specifically-functioned; tightly constrained; reactive and real-time; hardware and software coexistance</p>
@@ -997,7 +1022,7 @@
 <li>DMA engine handle the transfer (CPU is free to execute other things)</li>
 <li>DMA engine interrupt CPU again to signal completion</li>
 </ul>
-
+<img src="/2022/29_cs110/operation-of-DMA-transfer.png" srcset="/img/loading.gif" lazyload class="">
 <h3 id="problems"><a class="markdownIt-Anchor" href="#problems"></a> Problems</h3>
 <p>Where in the memory hierarchy do we plug in the DMA engine?</p>
 <ul>
@@ -1122,7 +1147,7 @@
 <p>每个parity bit检查 bits with least significant bit of address = 1的位置的奇偶性 (set parity bits to create even parity for each group)</p>
 </li>
 </ul>
-
+<img src="/2022/29_cs110/Hamming-code-coverage.png" srcset="/img/loading.gif" lazyload class="">
 <h3 id="cyclic-redundancy-check"><a class="markdownIt-Anchor" href="#cyclic-redundancy-check"></a> Cyclic redundancy check</h3>
 <p>Nothing,</p>
 <h2 id="raid-redundant-arrays-of-inexpensive-disks"><a class="markdownIt-Anchor" href="#raid-redundant-arrays-of-inexpensive-disks"></a> RAID (Redundant arrays of (inexpensive) disks)</h2>
@@ -1160,7 +1185,7 @@
 <li>happens if the packet’s length is not validated</li>
 <li><strong>implementation flow (not design flow)</strong></li>
 </ul>
-
+<img src="/2022/29_cs110/heartbleed.png" srcset="/img/loading.gif" lazyload class="">
 <h2 id="eavesdropping-disk-用硬盘来监听"><a class="markdownIt-Anchor" href="#eavesdropping-disk-用硬盘来监听"></a> Eavesdropping disk 用硬盘来监听</h2>
 <ul>
 <li>Re-flashing a disk’s firmware or maliciously leaving a stealthy backdoor 替换硬盘固件，或者硬盘本身的固件留有后门</li>
@@ -1173,7 +1198,7 @@
 <li><strong>Victim row</strong></li>
 <li>happens because DRAM cells are too close to each other; not electrically isolated (electrical interference)</li>
 </ul>
-
+<img src="/2022/29_cs110/rowhammer.png" srcset="/img/loading.gif" lazyload class="">
 <h2 id="side-channel-attacks-侧信道攻击"><a class="markdownIt-Anchor" href="#side-channel-attacks-侧信道攻击"></a> Side-channel attacks 侧信道攻击</h2>
 <p>原理是，对于不同的输入，程序会有不同的行为（运算速度、cache使用情况、功耗等），通过分析程序的行为反推出key</p>
 <ul>
@@ -1396,7 +1421,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <span> With </span> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <i class="iconfont icon-love"></i> <a href="/about" target="_blank" rel="nofollow noopener"><span>Bill Hu</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">Loading days...</span> <span id="times">Loading time...</span> <script src="/js/duration.min.js"></script> </div> 
     </div>
   
   
@@ -1405,26 +1430,9 @@
     <div class="beian">
   <span>
     <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      京ICP证123456号
+      沪ICP备2022004216号
     </a>
   </span>
-  
-    
-      <span>
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
-          
-          <span>京公网安备12345678号</span>
-        </a>
-      </span>
-    
   
 </div>
 

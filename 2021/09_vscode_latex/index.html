@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -23,12 +23,24 @@
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
 <meta property="og:description" content="配置latex环境，并使用Vscode或Jetbrains IDE配合插件写latex，保存时自动编译，实现&#39;半实时预览&#39;.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/screenshot1.png">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/image-20210915230311465.png">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/11.jpg">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/image-20210915231225002.png">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/image-20210915231334132.png">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/2314213.jpg">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/image-20210915232257650.png">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/pygmentize.png">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/shell-escape.jpg">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/aux.png">
+<meta property="og:image" content="https://billhu.cn/2021/09_vscode_latex/compileWithPdftex.jpg">
 <meta property="article:published_time" content="2021-09-14T11:38:40.000Z">
 <meta property="article:modified_time" content="2022-05-03T13:50:07.000Z">
 <meta property="article:author" content="Bill Hu">
 <meta property="article:tag" content="VSCode">
 <meta property="article:tag" content="LaTeX">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://billhu.cn/2021/09_vscode_latex/screenshot1.png">
   
   
   
@@ -83,7 +95,9 @@
 
 
   
-<meta name="generator" content="Hexo 6.2.0"></head>
+<!-- hexo injector head_end start -->
+<script async defer data-website-id="068f1627-b763-4c2d-a8ce-17b7c30de5e2" src="https://umami.billhu.cn/umami.js"></script>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
@@ -309,7 +323,7 @@
             <p>备注：可以使用 Command + Shift + P ( Ctrl + Shift + P ) 并搜索settings就能跳出来 <code>Preferences: Open Settings (JSON)</code> 这一项</p>
           </div>
 <p>然后再VSCode左侧边栏 “Tex” 中的<code>Build LaTeX Project</code>选项中，根据需要选择，如果你不知道选哪个，建议选择 <code>XeLaTeX</code>。</p>
-
+<img src="/2021/09_vscode_latex/screenshot1.png" srcset="/img/loading.gif" lazyload class="">
 <p>这样即可实现 保存时自动编译的功能。（<code>CMD+S</code>保存）</p>
 <h3 id="3-如何支持中文"><a class="markdownIt-Anchor" href="#3-如何支持中文"></a> 3. 如何支持中文</h3>
 <p>确保latex文档编码为’UTF-8’，在文档开头添加一句代码：</p>
@@ -318,23 +332,23 @@
 <p>​		（以Intellij IDEA为例，PyCharm、CLion等其它JetBrains IDE配置方法相同）</p>
 <h3 id="1-安装plugin"><a class="markdownIt-Anchor" href="#1-安装plugin"></a> 1 安装plugin</h3>
 <p>​	在 Preference -&gt; Plugins 中下载安装 <code>TeXiFy IDEA</code>和<code>PDF Viewer</code>插件。</p>
-
+<img src="/2021/09_vscode_latex/image-20210915230311465.png" srcset="/img/loading.gif" lazyload class="">
 <p>​	如果出现死活搜索不出东西，提示网络问题的话，可以试试 设置 -&gt; Auto-detect proxy settings -&gt; 填入 <code>plugins.jetbrains.com</code></p>
-
+<img src="/2021/09_vscode_latex/11.jpg" srcset="/img/loading.gif" lazyload class="">
 <h3 id="2-edit-configurations"><a class="markdownIt-Anchor" href="#2-edit-configurations"></a> 2 Edit Configurations</h3>
 <p>​	创建一个tex后缀的文件，点击右上角的 <code>Add Configuration</code></p>
-
+<img src="/2021/09_vscode_latex/image-20210915231225002.png" srcset="/img/loading.gif" lazyload class="">
 <p>​	左上角添加 -&gt; 选择LaTeX</p>
-
+<img src="/2021/09_vscode_latex/image-20210915231334132.png" srcset="/img/loading.gif" lazyload class="">
 <p>​	Name随便填（建议填tex文件名）；</p>
 <p>​	Compiler 选 <code>XeLaTeX</code>；</p>
 <p>​	PDF Viewer 选 <code>Built-in PDF Viewer</code>；</p>
 <p>​	Main File to compile 选择你写的tex文件</p>
-
+<img src="/2021/09_vscode_latex/2314213.jpg" srcset="/img/loading.gif" lazyload class="">
 <h3 id="3-编译latex"><a class="markdownIt-Anchor" href="#3-编译latex"></a> 3  编译LaTeX</h3>
 <p>​	点击右上角的运行按钮，或使用快捷键<code>Control + R</code>即可编译LaTeX生成PDF文件。此时插件应该会自动分屏（左侧为LaTeX源码，右侧为PDF阅读器）。如果没有自动分屏，就手动把<code>out</code>文件夹里的pdf文件拖出来分屏。</p>
 <p>​	每次使用快捷键<code>Control + R</code>时都会自动编译并更新PDF，实现实时预览。</p>
-
+<img src="/2021/09_vscode_latex/image-20210915232257650.png" srcset="/img/loading.gif" lazyload class="">
 <p>​</p>
 <div class="note note-info">
             <h2 id="如何编译-ca-2022-hw6-的那一堆latex"><a class="markdownIt-Anchor" href="#如何编译-ca-2022-hw6-的那一堆latex"></a> 如何编译 CA 2022 HW6 的那一堆latex？</h2><p>首先，你要编译的是main.tex，但是直接编译可能会报错，报错内容与 <code>Package minted</code> 有关。按照下面的来。</p>
@@ -345,13 +359,13 @@
 <p>它不能直接使用，需要先安装python3和pygments库</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pip3 <span class="hljs-keyword">install</span> pygments<br></code></pre></td></tr></table></figure>
 <p>并且pygmentize必须要在环境变量中</p>
-
+<img src="/2021/09_vscode_latex/pygmentize.png" srcset="/img/loading.gif" lazyload class="">
 <p>修改 settings.json 中 latex 的相关配置，添加 pdflatex 编译命令的参数 <code>--shell-escape</code></p>
-
+<img src="/2021/09_vscode_latex/shell-escape.jpg" srcset="/img/loading.gif" lazyload class="">
 <p>然后在自动清理的文件类型中，取消 .aux 文件（这个文件记录了所有的引用编号，如果还没编译完成就删除，可能出现 <code>\ref</code> 的引用编译出 <code>??</code> 的问题）</p>
-
+<img src="/2021/09_vscode_latex/aux.png" srcset="/img/loading.gif" lazyload class="">
 <p>编译时使用pdflatex编译<code>main.tex</code>即可。</p>
-
+<img src="/2021/09_vscode_latex/compileWithPdftex.jpg" srcset="/img/loading.gif" lazyload class="">
 
                 
               </div>
@@ -553,7 +567,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <span> With </span> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <i class="iconfont icon-love"></i> <a href="/about" target="_blank" rel="nofollow noopener"><span>Bill Hu</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">Loading days...</span> <span id="times">Loading time...</span> <script src="/js/duration.min.js"></script> </div> 
     </div>
   
   
@@ -562,26 +576,9 @@
     <div class="beian">
   <span>
     <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      京ICP证123456号
+      沪ICP备2022004216号
     </a>
   </span>
-  
-    
-      <span>
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
-          
-          <span>京公网安备12345678号</span>
-        </a>
-      </span>
-    
   
 </div>
 

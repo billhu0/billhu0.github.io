@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -23,12 +23,16 @@
 <meta property="og:site_name" content="Bill Hu&#39;s Blog">
 <meta property="og:description" content="The way to turn on&#x2F;off swap, or changing the size of swap, on Ubuntu. Other linux distributions are similar.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://billhu.cn/2022/18_ubt_swap/free_m_withswap.png">
+<meta property="og:image" content="https://billhu.cn/2022/18_ubt_swap/swapon.png">
+<meta property="og:image" content="https://billhu.cn/2022/18_ubt_swap/fstab.png">
 <meta property="article:published_time" content="2022-02-13T08:34:56.000Z">
 <meta property="article:modified_time" content="2022-05-03T13:50:07.000Z">
 <meta property="article:author" content="Bill Hu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://billhu.cn/2022/18_ubt_swap/free_m_withswap.png">
   
   
   
@@ -83,7 +87,9 @@
 
 
   
-<meta name="generator" content="Hexo 6.2.0"></head>
+<!-- hexo injector head_end start -->
+<script async defer data-website-id="068f1627-b763-4c2d-a8ce-17b7c30de5e2" src="https://umami.billhu.cn/umami.js"></script>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
@@ -298,7 +304,7 @@
 <p>Use <code>free</code> in shell can let you see your memory usage, including the size of physical memory and swap. Usually we use <code>free -m</code> to let it display numbers in unit ‘MB’.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">free -m<br></code></pre></td></tr></table></figure>
 <p>If the row ‘swap’ shows zero, it indicates you does not have swap currently.</p>
-
+<img src="/2022/18_ubt_swap/free_m_withswap.png" srcset="/img/loading.gif" lazyload class="">
 <h3 id="step1-create-a-swap-file"><a class="markdownIt-Anchor" href="#step1-create-a-swap-file"></a> Step1. Create a swap file</h3>
 <p>In terminal, execute</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo dd if=/dev/zero of=/swapfile bs=1M count=4096<br></code></pre></td></tr></table></figure>
@@ -311,7 +317,7 @@
 <p>After that, we need to make this normal file a swapfile. In terminal, execute</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mkswap /swapfile<br>sudo swapon /swapfile<br></code></pre></td></tr></table></figure>
 <p>If succeeds, you can see the fillowing prompt</p>
-
+<img src="/2022/18_ubt_swap/swapon.png" srcset="/img/loading.gif" lazyload class="">
 <div class="note note-info">
             <p>Now you can use <code>free -m</code> command again to check whether the swap is successfully turned on.</p>
           </div>
@@ -321,7 +327,7 @@
 <p>Add the following line at the end of file, save, and exit.</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">/swapfile <span class="hljs-keyword">swap</span> <span class="hljs-keyword">swap</span> defaults <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 <p>The contents of this file should look similar to the following</p>
-
+<img src="/2022/18_ubt_swap/fstab.png" srcset="/img/loading.gif" lazyload class="" title="&#x2F;etc&#x2F;fstab">
 <p>Now you have successfully configured swap and make it start automatically at boot.</p>
 <h3 id="optional-step4-change-swapiness"><a class="markdownIt-Anchor" href="#optional-step4-change-swapiness"></a> (Optional) Step4. Change swapiness</h3>
 <p>Swapiness’s value controls the system’s likelihood to use virtual memory. A higher value indicates using the swap partition more frequently, and a lower value means using physical memory more likely.</p>
@@ -556,7 +562,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <span> With </span> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <i class="iconfont icon-love"></i> <a href="/about" target="_blank" rel="nofollow noopener"><span>Bill Hu</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">Loading days...</span> <span id="times">Loading time...</span> <script src="/js/duration.min.js"></script> </div> 
     </div>
   
   
@@ -565,26 +571,9 @@
     <div class="beian">
   <span>
     <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      京ICP证123456号
+      沪ICP备2022004216号
     </a>
   </span>
-  
-    
-      <span>
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
-          
-          <span>京公网安备12345678号</span>
-        </a>
-      </span>
-    
   
 </div>
 
