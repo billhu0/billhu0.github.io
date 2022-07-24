@@ -11,8 +11,8 @@ https://billhu.cn/2021/01_hello_world/
 https://billhu.cn/2021/02_raspi_config/
 https://billhu.cn/2021/05_vscode_cpp/
 https://billhu.cn/2021/09_vscode_latex/
-https://billhu.cn/2022/18_ubt_swap/
 https://billhu.cn/2022/19_linux_commands/
+https://billhu.cn/2022/18_ubt_swap/
 https://billhu.cn/2022/22_hexo_nginx_ssl/
 https://billhu.cn/2022/26_lets_encrypt_ssl/
 https://billhu.cn/2022/27_docker/
@@ -43,9 +43,9 @@ https://billhu.cn/tags/LaTeX/
 https://billhu.cn/tags/Lecture-Notes/
 https://billhu.cn/tags/math/
 https://billhu.cn/tags/ssh/
+https://billhu.cn/tags/brew/
 https://billhu.cn/tags/Math/
 https://billhu.cn/tags/Probability/
-https://billhu.cn/tags/brew/
 https://billhu.cn/tags/frp/
 https://billhu.cn/tags/Arduino/
 https://billhu.cn/tags/Ubuntu/
@@ -60,8 +60,8 @@ https://billhu.cn/categories/VSCode/
 https://billhu.cn/categories/hexo/
 https://billhu.cn/categories/C/
 https://billhu.cn/categories/Lecture-Notes/
-https://billhu.cn/categories/Linux/
 https://billhu.cn/categories/macOS/
+https://billhu.cn/categories/Linux/
 https://billhu.cn/categories/nginx/
 https://billhu.cn/categories/git/
 https://billhu.cn/categories/vscode/
