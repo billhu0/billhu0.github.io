@@ -1,3 +1,6 @@
+https://billhu.cn/2022/10_hexo_katex/
+https://billhu.cn/2021/03.raspi_homebridge/
+https://billhu.cn/2021/02_raspi_config/
 https://billhu.cn/2022/25_signal/
 https://billhu.cn/about/index.html
 https://billhu.cn/2022/30_c_and_cpp/
@@ -8,7 +11,6 @@ https://billhu.cn/2022/15_brew_tsinghua/
 https://billhu.cn/2022/28_homeassistant/
 https://billhu.cn/2022/23_git/
 https://billhu.cn/2021/01_hello_world/
-https://billhu.cn/2021/02_raspi_config/
 https://billhu.cn/2021/05_vscode_cpp/
 https://billhu.cn/2021/09_vscode_latex/
 https://billhu.cn/2022/18_ubt_swap/
@@ -19,11 +21,9 @@ https://billhu.cn/2022/27_docker/
 https://billhu.cn/2022/20_ubuntu-config/
 https://billhu.cn/2021/24_uninstall_vscode/
 https://billhu.cn/2022/21_hexo_server/
-https://billhu.cn/2022/10_hexo_katex/
 https://billhu.cn/2022/12_vscode_remote_passwd/
 https://billhu.cn/2022/14_ssh_keygen/
 https://billhu.cn/2022/16_fcp/
-https://billhu.cn/2021/03.raspi_homebridge/
 https://billhu.cn/2021/17_arduino_ultrasonic/
 https://billhu.cn/2021/06_hexo/
 https://billhu.cn/2021/07_wsl/
@@ -53,15 +53,15 @@ https://billhu.cn/tags/nginx/
 https://billhu.cn/tags/git/
 https://billhu.cn/tags/linux/
 https://billhu.cn/tags/vscode/
-https://billhu.cn/tags/docker/
 https://billhu.cn/tags/Homeassistant/
+https://billhu.cn/tags/docker/
 https://billhu.cn/categories/Raspi-Arduino/
 https://billhu.cn/categories/VSCode/
 https://billhu.cn/categories/hexo/
 https://billhu.cn/categories/C/
 https://billhu.cn/categories/Lecture-Notes/
-https://billhu.cn/categories/macOS/
 https://billhu.cn/categories/Linux/
+https://billhu.cn/categories/macOS/
 https://billhu.cn/categories/nginx/
 https://billhu.cn/categories/git/
 https://billhu.cn/categories/vscode/
