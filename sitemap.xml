@@ -339,6 +339,13 @@
   </url>
   
   <url>
+    <loc>https://billhu.cn/tags/hexo/</loc>
+    <lastmod>2022-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://billhu.cn/tags/windows/</loc>
     <lastmod>2022-08-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -347,13 +354,6 @@
   
   <url>
     <loc>https://billhu.cn/tags/WSL/</loc>
-    <lastmod>2022-08-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://billhu.cn/tags/hexo/</loc>
     <lastmod>2022-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -416,14 +416,14 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/Arduino/</loc>
+    <loc>https://billhu.cn/tags/frp/</loc>
     <lastmod>2022-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/frp/</loc>
+    <loc>https://billhu.cn/tags/Arduino/</loc>
     <lastmod>2022-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -465,14 +465,14 @@
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/Homeassistant/</loc>
+    <loc>https://billhu.cn/tags/docker/</loc>
     <lastmod>2022-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://billhu.cn/tags/docker/</loc>
+    <loc>https://billhu.cn/tags/Homeassistant/</loc>
     <lastmod>2022-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
