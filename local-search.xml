@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Use R language in jupyter notebook</title>
+    <link href="/2022/36_r_jupyter/"/>
+    <url>/2022/36_r_jupyter/</url>
+    
+    <content type="html"><![CDATA[<p>Step 1. Install R</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">brew install R<br></code></pre></td></tr></table></figure><p>Step 2. Install jupyter kernal inside R</p><p>Type <code>R</code> to enter the R interactive terminal, then execute</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs R">install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&#x27;IRkernel&#x27;</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure><p>When the installation is complete, the program will output the location of the downloaded packages. For example:</p><p>![](36_r_jupyter/downloaded packages.jpg)</p><p>Copy the location and in shell</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">jupyter kernelspec install /path/to/packages<br></code></pre></td></tr></table></figure><p>Step 3.</p><p>Enter R interactive terminal again, and</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs R">IRkernel<span class="hljs-operator">::</span>installspec<span class="hljs-punctuation">(</span>user <span class="hljs-operator">=</span> <span class="hljs-literal">FALSE</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure><p>Now you should be able to select R kernal inside jupyter notebook.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>R</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>R</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C &amp; C++ Code Snippets</title>
     <link href="/2022/30_c_and_cpp/"/>
     <url>/2022/30_c_and_cpp/</url>

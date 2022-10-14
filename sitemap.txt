@@ -1,3 +1,5 @@
+https://billhu.cn/2022/36_r_jupyter/
+https://billhu.cn/2022/13_probability/
 https://billhu.cn/2021/01_hello_world/
 https://billhu.cn/2022/20_ubuntu-config/
 https://billhu.cn/2021/08_algorithm/
@@ -7,7 +9,6 @@ https://billhu.cn/2022/28_homeassistant/
 https://billhu.cn/2021/17_arduino_ultrasonic/
 https://billhu.cn/2022/19_linux_commands/
 https://billhu.cn/2022/15_brew_ustc/
-https://billhu.cn/2022/13_probability/
 https://billhu.cn/2022/22_hexo_nginx_ssl/
 https://billhu.cn/2022/31_pixel3/
 https://billhu.cn/2021/09_vscode_latex/
@@ -58,6 +59,7 @@ https://billhu.cn/tags/vscode/
 https://billhu.cn/tags/docker/
 https://billhu.cn/tags/Homeassistant/
 https://billhu.cn/tags/Android/
+https://billhu.cn/tags/R/
 https://billhu.cn/categories/macOS/
 https://billhu.cn/categories/Raspi-Arduino/
 https://billhu.cn/categories/VSCode/
@@ -70,3 +72,4 @@ https://billhu.cn/categories/git/
 https://billhu.cn/categories/vscode/
 https://billhu.cn/categories/docker/
 https://billhu.cn/categories/Android/
+https://billhu.cn/categories/R/
