@@ -36,11 +36,11 @@ https://billhu.cn/tags/Linux/
 https://billhu.cn/tags/RaspberryPi/
 https://billhu.cn/tags/HomeBridge/
 https://billhu.cn/tags/HomeKit/
+https://billhu.cn/tags/C/
+https://billhu.cn/tags/VSCode/
 https://billhu.cn/tags/hexo/
 https://billhu.cn/tags/windows/
 https://billhu.cn/tags/WSL/
-https://billhu.cn/tags/C/
-https://billhu.cn/tags/VSCode/
 https://billhu.cn/tags/C/
 https://billhu.cn/tags/LaTeX/
 https://billhu.cn/tags/Lecture-Notes/
@@ -62,8 +62,8 @@ https://billhu.cn/tags/Android/
 https://billhu.cn/tags/R/
 https://billhu.cn/categories/macOS/
 https://billhu.cn/categories/Raspi-Arduino/
-https://billhu.cn/categories/hexo/
 https://billhu.cn/categories/VSCode/
+https://billhu.cn/categories/hexo/
 https://billhu.cn/categories/C/
 https://billhu.cn/categories/Lecture-Notes/
 https://billhu.cn/categories/Linux/
