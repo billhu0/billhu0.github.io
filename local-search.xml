@@ -13,6 +13,8 @@
     
     <categories>
       
+      <category>Code</category>
+      
       <category>R</category>
       
     </categories>
@@ -37,6 +39,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>C++</category>
       
@@ -119,6 +123,8 @@
     
     <categories>
       
+      <category>Code</category>
+      
       <category>Raspi&amp;Arduino</category>
       
     </categories>
@@ -150,7 +156,9 @@
     
     <categories>
       
-      <category>docker</category>
+      <category>Code</category>
+      
+      <category>Docker</category>
       
     </categories>
     
@@ -230,6 +238,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>git</category>
       
@@ -314,6 +324,8 @@
     
     <categories>
       
+      <category>Code</category>
+      
       <category>Linux</category>
       
     </categories>
@@ -340,6 +352,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>Linux</category>
       
@@ -368,6 +382,8 @@
     
     <categories>
       
+      <category>Code</category>
+      
       <category>Linux</category>
       
     </categories>
@@ -392,6 +408,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>Linux</category>
       
@@ -446,6 +464,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>Linux</category>
       
@@ -502,6 +522,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>VSCode</category>
       
@@ -586,6 +608,8 @@
     
     <categories>
       
+      <category>Code</category>
+      
       <category>C++</category>
       
     </categories>
@@ -635,6 +659,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>vscode</category>
       
@@ -688,6 +714,8 @@
     
     <categories>
       
+      <category>Code</category>
+      
       <category>VSCode</category>
       
     </categories>
@@ -717,6 +745,8 @@
     
     <categories>
       
+      <category>Code</category>
+      
       <category>VSCode</category>
       
     </categories>
@@ -743,6 +773,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>Raspi&amp;Arduino</category>
       
@@ -774,6 +806,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>Raspi&amp;Arduino</category>
       
@@ -814,6 +848,8 @@
     
     
     <categories>
+      
+      <category>Code</category>
       
       <category>Raspi&amp;Arduino</category>
       
