@@ -317,7 +317,21 @@
 
   
   <url>
+    <loc>https://www.billhu.us/tags/C/</loc>
+    <lastmod>2023-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/tags/macOS/</loc>
+    <lastmod>2023-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/tags/VSCode/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -352,27 +366,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/tags/C/</loc>
-    <lastmod>2023-01-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/VSCode/</loc>
-    <lastmod>2023-01-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/hexo/</loc>
-    <lastmod>2023-01-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/tags/windows/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -387,14 +380,14 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/tags/C/</loc>
+    <loc>https://www.billhu.us/tags/hexo/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.billhu.us/tags/LaTeX/</loc>
+    <loc>https://www.billhu.us/tags/C/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -415,7 +408,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/tags/ssh/</loc>
+    <loc>https://www.billhu.us/tags/LaTeX/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -430,6 +423,13 @@
   
   <url>
     <loc>https://www.billhu.us/tags/Probability/</loc>
+    <lastmod>2023-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/tags/ssh/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -471,6 +471,13 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/tags/vscode/</loc>
+    <lastmod>2023-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/tags/git/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -479,13 +486,6 @@
   
   <url>
     <loc>https://www.billhu.us/tags/linux/</loc>
-    <lastmod>2023-01-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/vscode/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -522,14 +522,14 @@
 
   
   <url>
-    <loc>https://www.billhu.us/categories/macOS/</loc>
+    <loc>https://www.billhu.us/categories/Code/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/</loc>
+    <loc>https://www.billhu.us/categories/Code/VSCode/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -543,13 +543,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/Raspi-Arduino/</loc>
-    <lastmod>2023-01-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/categories/Code/C/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -557,7 +550,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/VSCode/</loc>
+    <loc>https://www.billhu.us/categories/Code/Raspi-Arduino/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -578,6 +571,13 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/categories/macOS/</loc>
+    <lastmod>2023-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/categories/nginx/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -585,14 +585,14 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/git/</loc>
+    <loc>https://www.billhu.us/categories/Code/vscode/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/vscode/</loc>
+    <loc>https://www.billhu.us/categories/Code/git/</loc>
     <lastmod>2023-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
