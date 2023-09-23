@@ -14,10 +14,10 @@ https://www.billhu.us/2022/22_hexo_nginx_ssl/
 https://www.billhu.us/2022/23_git/
 https://www.billhu.us/2021/24_uninstall_vscode/
 https://www.billhu.us/2022/25_signal/
-https://www.billhu.us/2022/19_linux_commands/
-https://www.billhu.us/2022/20_ubuntu-config/
 https://www.billhu.us/2021/17_arduino_ultrasonic/
 https://www.billhu.us/2022/18_ubt_swap/
+https://www.billhu.us/2022/19_linux_commands/
+https://www.billhu.us/2022/20_ubuntu-config/
 https://www.billhu.us/2022/15_brew_ustc/
 https://www.billhu.us/2022/16_frp/
 https://www.billhu.us/2022/13_probability/
@@ -65,10 +65,10 @@ https://www.billhu.us/tags/Android/
 https://www.billhu.us/tags/R/
 https://www.billhu.us/categories/macOS/
 https://www.billhu.us/categories/Code/
-https://www.billhu.us/categories/hexo/
 https://www.billhu.us/categories/Code/Raspi-Arduino/
-https://www.billhu.us/categories/Code/C/
 https://www.billhu.us/categories/Code/VSCode/
+https://www.billhu.us/categories/hexo/
+https://www.billhu.us/categories/Code/C/
 https://www.billhu.us/categories/Lecture-Notes/
 https://www.billhu.us/categories/Code/Linux/
 https://www.billhu.us/categories/nginx/
