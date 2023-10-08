@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>[Lecture Notes] ShanghaiTech CS252 Cryptography</title>
+    <link href="/2023/40-cs252/"/>
+    <url>/2023/40-cs252/</url>
+    
+    <content type="html"><![CDATA[<h1 id="lec-1"><a class="markdownIt-Anchor" href="#lec-1"></a> Lec 1</h1><h2 id="information-security"><a class="markdownIt-Anchor" href="#information-security"></a> Information security</h2><p><strong>Information security</strong>: The <strong>protection</strong> of information and information systems from unauthorized access, use, disclosure, disruption, modification, or destruction in order to provide <strong>confidentiality, integrity, and availability</strong>.</p><ul><li><p><strong>Confidentiality</strong>: the property that sensitive information is <strong>not disclosed</strong> to <strong>unauthorized</strong> individuals, entities or processes.</p></li><li><p><strong>Integrity</strong>: the property that sensitive data has <strong>not been modified or deleted</strong> in an <strong>unauthorized and undetected</strong> manner.</p></li><li><p><strong>Authentication</strong>: the process of estabilishing confidence in the identity of users or information systems.</p></li><li><p><strong>Non-Repudiation</strong>: assurance that the sender of information is provided with proof of delivery and the recipient is provided with proof of the sender’s identity, so neither can later deny having processed the information.</p></li></ul><h2 id="course-outline"><a class="markdownIt-Anchor" href="#course-outline"></a> Course outline</h2><ul><li>classical cryptography</li><li>private-key cryptography</li><li>public-key cryptography</li><li>advanced topics</li></ul><h1 id="lec-2"><a class="markdownIt-Anchor" href="#lec-2"></a> Lec 2.</h1><h2 id="private-key-encryption-privke"><a class="markdownIt-Anchor" href="#private-key-encryption-privke"></a> Private-key Encryption (PrivKE)</h2><img src="/2023/40-cs252/privke.png" class="" title="PrivKE"><blockquote><ul><li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi></mrow><annotation encoding="application/x-tex">\mathrm{Gen}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathrm">G</span><span class="mord mathrm">e</span><span class="mord mathrm">n</span></span></span></span></span> = key generation, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">E</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow><annotation encoding="application/x-tex">\mathrm{Enc}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathrm">E</span><span class="mord mathrm">n</span><span class="mord mathrm">c</span></span></span></span></span> = encryption, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow><annotation encoding="application/x-tex">\mathrm{Dec}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">e</span><span class="mord mathrm">c</span></span></span></span></span> = decryption</li><li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> = secret key, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span></span></span></span> = plaintext (message), <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">c</span></span></span></span> = ciphertext</li><li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">K</mi></mrow><annotation encoding="application/x-tex">\mathcal{K}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.01445em;">K</span></span></span></span></span> = key space, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">M</mi></mrow><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal">M</span></span></span></span></span> = plaintext space, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">C</mi></mrow><annotation encoding="application/x-tex">\mathcal{C}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.05834em;">C</span></span></span></span></span> = ciphertext space</li></ul></blockquote><ul><li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">K</mi><mi mathvariant="normal">E</mi></mrow><mo>=</mo><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mi mathvariant="normal">E</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi><mo separator="true">,</mo><mi mathvariant="normal">D</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi></mrow><mo stretchy="false">)</mo><mo>+</mo><mi mathvariant="script">M</mi></mrow><annotation encoding="application/x-tex">\mathrm{PrivKE} = (\mathrm{Gen, Enc, Dec}) + \mathcal{M}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathrm">P</span><span class="mord mathrm">r</span><span class="mord mathrm">i</span><span class="mord mathrm" style="margin-right:0.01389em;">v</span><span class="mord mathrm">K</span><span class="mord mathrm">E</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">G</span><span class="mord mathrm">e</span><span class="mord mathrm">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathrm">E</span><span class="mord mathrm">n</span><span class="mord mathrm">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathrm">D</span><span class="mord mathrm">e</span><span class="mord mathrm">c</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal">M</span></span></span></span></span><ul><li><strong>Correctness</strong>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mo stretchy="false">(</mo><mi mathvariant="normal">k</mi><mo separator="true">,</mo><mrow><mi mathvariant="normal">E</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow><mo stretchy="false">(</mo><mi mathvariant="normal">k</mi><mo separator="true">,</mo><mi mathvariant="normal">m</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">m</mi></mrow><annotation encoding="application/x-tex">\mathrm{Dec(k, \mathrm{Enc}(k, m)) = m}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">e</span><span class="mord mathrm">c</span><span class="mopen">(</span><span class="mord mathrm">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathrm">E</span><span class="mord mathrm">n</span><span class="mord mathrm">c</span></span><span class="mopen">(</span><span class="mord mathrm">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathrm">m</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathrm">m</span></span></span></span></span></li><li><strong>Security</strong>: the adversary should not be able to learn <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span></span></span></span> from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">c</span></span></span></span></li></ul></li></ul><h2 id="kerchkhoffs-principle"><a class="markdownIt-Anchor" href="#kerchkhoffs-principle"></a> Kerchkhoff’s Principle</h2><p><strong>Principle</strong>: The <strong>cipher method must not be required to be secret</strong>, and it must ba able to fall into the hands of the enemy without inconvenience. 加密算法应该公开.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Lecture Notes</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Lecture Notes</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>[Lecture Notes] UW-Madison CS537 Operating Systems</title>
     <link href="/2023/37_cs537/"/>
     <url>/2023/37_cs537/</url>
@@ -153,9 +178,9 @@
     
     <tags>
       
-      <tag>C</tag>
-      
       <tag>C++</tag>
+      
+      <tag>C</tag>
       
     </tags>
     
@@ -205,9 +230,9 @@
     
     <tags>
       
-      <tag>C</tag>
-      
       <tag>C++</tag>
+      
+      <tag>C</tag>
       
       <tag>Lecture Notes</tag>
       
@@ -752,9 +777,9 @@
     
     <tags>
       
-      <tag>C</tag>
-      
       <tag>C++</tag>
+      
+      <tag>C</tag>
       
     </tags>
     
@@ -858,9 +883,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>macOS</tag>
+      
+      <tag>C++</tag>
       
       <tag>VSCode</tag>
       
@@ -993,9 +1018,9 @@
     
     <tags>
       
-      <tag>C</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>C</tag>
       
       <tag>Arduino</tag>
       
