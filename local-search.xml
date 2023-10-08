@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>[Lecture Notes] UW-Madison CS537 Intro to Operating Systems</title>
+    <title>[Lecture Notes] UW-Madison CS537 Operating Systems</title>
     <link href="/2023/37_cs537/"/>
     <url>/2023/37_cs537/</url>
     
@@ -153,9 +153,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>C</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -205,11 +205,11 @@
     
     <tags>
       
-      <tag>Lecture Notes</tag>
+      <tag>C</tag>
       
       <tag>C++</tag>
       
-      <tag>C</tag>
+      <tag>Lecture Notes</tag>
       
     </tags>
     
@@ -752,9 +752,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>C</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -858,9 +858,9 @@
     
     <tags>
       
-      <tag>macOS</tag>
-      
       <tag>C++</tag>
+      
+      <tag>macOS</tag>
       
       <tag>VSCode</tag>
       
@@ -993,9 +993,9 @@
     
     <tags>
       
-      <tag>Linux</tag>
-      
       <tag>C</tag>
+      
+      <tag>Linux</tag>
       
       <tag>Arduino</tag>
       
