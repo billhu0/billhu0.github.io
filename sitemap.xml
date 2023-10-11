@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.billhu.us/2023/40-cs252/</loc>
+    <loc>https://www.billhu.us/about/index.html</loc>
     
     <lastmod>2023-10-11</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/about/index.html</loc>
+    <loc>https://www.billhu.us/2023/40-cs252/</loc>
     
     <lastmod>2023-10-11</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
+    <loc>https://www.billhu.us/2023/37_cs537/</loc>
     
     <lastmod>2023-10-11</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2023/37_cs537/</loc>
+    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
     
     <lastmod>2023-10-11</lastmod>
     
@@ -173,24 +173,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/17_arduino_ultrasonic/</loc>
-    
-    <lastmod>2023-10-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2022/18_ubt_swap/</loc>
-    
-    <lastmod>2023-10-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2022/19_linux_commands/</loc>
     
     <lastmod>2023-10-11</lastmod>
@@ -201,6 +183,24 @@
   
   <url>
     <loc>https://www.billhu.us/2022/20_ubuntu-config/</loc>
+    
+    <lastmod>2023-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2021/17_arduino_ultrasonic/</loc>
+    
+    <lastmod>2023-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/18_ubt_swap/</loc>
     
     <lastmod>2023-10-11</lastmod>
     
@@ -353,42 +353,7 @@
 
   
   <url>
-    <loc>https://www.billhu.us/tags/C/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/C/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/tags/Lecture-Notes/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/Android/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/math/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/R/</loc>
     <lastmod>2023-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -430,6 +395,13 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/tags/C/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/tags/VSCode/</loc>
     <lastmod>2023-10-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -458,7 +430,21 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/tags/C/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/tags/LaTeX/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/tags/math/</loc>
     <lastmod>2023-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -555,38 +541,24 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://www.billhu.us/tags/Android/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/tags/R/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/categories/Code/C/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/categories/Lecture-Notes/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/categories/Android/</loc>
-    <lastmod>2023-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/categories/Code/R/</loc>
     <lastmod>2023-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -600,7 +572,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/Raspi-Arduino/</loc>
+    <loc>https://www.billhu.us/categories/Code/</loc>
     <lastmod>2023-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -615,6 +587,20 @@
   
   <url>
     <loc>https://www.billhu.us/categories/hexo/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/categories/Code/C/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/categories/Code/Raspi-Arduino/</loc>
     <lastmod>2023-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -650,6 +636,20 @@
   
   <url>
     <loc>https://www.billhu.us/categories/Code/Docker/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/categories/Android/</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/categories/Code/R/</loc>
     <lastmod>2023-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
