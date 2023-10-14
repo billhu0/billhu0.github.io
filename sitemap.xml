@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.billhu.us/about/index.html</loc>
+    <loc>https://www.billhu.us/2023/40-cs252/</loc>
     
     <lastmod>2023-10-14</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2023/40-cs252/</loc>
+    <loc>https://www.billhu.us/about/index.html</loc>
     
     <lastmod>2023-10-14</lastmod>
     
@@ -308,24 +308,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/01_hello_world/</loc>
-    
-    <lastmod>2023-10-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2021/02_raspi_config/</loc>
-    
-    <lastmod>2023-10-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2021/03_raspi_homebridge/</loc>
     
     <lastmod>2023-10-14</lastmod>
@@ -336,6 +318,24 @@
   
   <url>
     <loc>https://www.billhu.us/2021/05_vscode_cpp/</loc>
+    
+    <lastmod>2023-10-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2021/01_hello_world/</loc>
+    
+    <lastmod>2023-10-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2021/02_raspi_config/</loc>
     
     <lastmod>2023-10-14</lastmod>
     
