@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2023/37_cs537/</loc>
+    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
+    <loc>https://www.billhu.us/2023/37_cs537/</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -173,24 +173,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/19_linux_commands/</loc>
-    
-    <lastmod>2023-10-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2022/20_ubuntu-config/</loc>
-    
-    <lastmod>2023-10-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2021/17_arduino_ultrasonic/</loc>
     
     <lastmod>2023-10-20</lastmod>
@@ -201,6 +183,24 @@
   
   <url>
     <loc>https://www.billhu.us/2022/18_ubt_swap/</loc>
+    
+    <lastmod>2023-10-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/19_linux_commands/</loc>
+    
+    <lastmod>2023-10-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/20_ubuntu-config/</loc>
     
     <lastmod>2023-10-20</lastmod>
     
