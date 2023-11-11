@@ -23,11 +23,11 @@ https://www.billhu.us/2022/19_linux_commands/
 https://www.billhu.us/2022/20_ubuntu-config/
 https://www.billhu.us/2022/15_brew_ustc/
 https://www.billhu.us/2022/16_frp/
+https://www.billhu.us/2022/13_probability/
+https://www.billhu.us/2022/14_ssh_keygen/
 https://www.billhu.us/2022/10_hexo_katex/
 https://www.billhu.us/2022/11_d/
 https://www.billhu.us/2022/12_vscode_remote_passwd/
-https://www.billhu.us/2022/13_probability/
-https://www.billhu.us/2022/14_ssh_keygen/
 https://www.billhu.us/2021/09_vscode_latex/
 https://www.billhu.us/2021/07_wsl/
 https://www.billhu.us/2021/08_algorithm/
