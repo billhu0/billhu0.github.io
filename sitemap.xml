@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/2024/41_ubuntu_uuid/</loc>
+    
+    <lastmod>2024-02-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2023/40_cs252/</loc>
     
     <lastmod>2024-02-29</lastmod>
@@ -146,15 +155,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/23_git/</loc>
-    
-    <lastmod>2024-02-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2021/24_uninstall_vscode/</loc>
     
     <lastmod>2024-02-29</lastmod>
@@ -164,25 +164,16 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/2022/23_git/</loc>
+    
+    <lastmod>2024-02-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2022/25_signal/</loc>
-    
-    <lastmod>2024-02-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2022/20_ubuntu-config/</loc>
-    
-    <lastmod>2024-02-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2022/19_linux_commands/</loc>
     
     <lastmod>2024-02-29</lastmod>
     
@@ -201,6 +192,24 @@
   
   <url>
     <loc>https://www.billhu.us/2022/18_ubt_swap/</loc>
+    
+    <lastmod>2024-02-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/19_linux_commands/</loc>
+    
+    <lastmod>2024-02-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/20_ubuntu-config/</loc>
     
     <lastmod>2024-02-29</lastmod>
     
@@ -479,14 +488,14 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/tags/Arduino/</loc>
+    <loc>https://www.billhu.us/tags/frp/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.billhu.us/tags/frp/</loc>
+    <loc>https://www.billhu.us/tags/Arduino/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -507,6 +516,13 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/tags/vscode/</loc>
+    <lastmod>2024-02-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/tags/git/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -515,13 +531,6 @@
   
   <url>
     <loc>https://www.billhu.us/tags/linux/</loc>
-    <lastmod>2024-02-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/vscode/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -621,14 +630,14 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/git/</loc>
+    <loc>https://www.billhu.us/categories/Code/vscode/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Code/vscode/</loc>
+    <loc>https://www.billhu.us/categories/Code/git/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
