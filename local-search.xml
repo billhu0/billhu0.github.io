@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Configure Oh-my-zsh on Git Bash (Windows)</title>
+    <link href="/2024/42_git-bash-zsh/"/>
+    <url>/2024/42_git-bash-zsh/</url>
+    
+    <content type="html"><![CDATA[<h2 id="step-1-download-the-latest-msys2-zsh-package"><a class="markdownIt-Anchor" href="#step-1-download-the-latest-msys2-zsh-package"></a> Step 1. Download the latest MSYS2 zsh package</h2><p>… from the <a href="https://packages.msys2.org/package/zsh?repo=msys&amp;variant=x86_64">link</a>.</p><p>The filename should look similar to <code>zsh-5.9-2-x86_64.pkg.tar.zst</code>.</p><h2 id="step-2-extract-and-merge"><a class="markdownIt-Anchor" href="#step-2-extract-and-merge"></a> Step 2. Extract and merge</h2><p>Extract the archive and copy the contents (including the <code>/etc</code> and <code>/usr</code> folders) into <code>C:\Program Files\Git</code>. Merge the folders.</p><h2 id="step-3-open-git-bash-and-start-zsh"><a class="markdownIt-Anchor" href="#step-3-open-git-bash-and-start-zsh"></a> Step 3. Open Git Bash and start zsh</h2><p>Open Git Bash and Execute <code>zsh</code>. Configure as prompted.</p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs haxe">autoload -U zsh-<span class="hljs-keyword">new</span><span class="hljs-type">user</span>-install<br>zsh-<span class="hljs-keyword">new</span><span class="hljs-type">user</span>-install -f<br></code></pre></td></tr></table></figure><ul><li><p>To configure the history, enter <code>1</code>, change the values if you like by <code>1</code>-<code>3</code>, and then enter <code>0</code>.</p></li><li><p>To configure the completion, enter <code>2</code> to “Use the new completion system”, and then enter <code>0</code>.</p></li><li><p>Enter <code>0</code> to save the settings.</p></li></ul><h2 id="step-4-setting-zsh-as-the-default-shell"><a class="markdownIt-Anchor" href="#step-4-setting-zsh-as-the-default-shell"></a> Step 4. Setting zsh as the default shell</h2><p>… by appending the following into <code>~/.bashrc</code>:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> [ -t 1 ]; <span class="hljs-keyword">then</span><br>  <span class="hljs-built_in">exec</span> zsh<br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Ubuntu如何挂载新硬盘</title>
     <link href="/2024/41_ubuntu_uuid/"/>
     <url>/2024/41_ubuntu_uuid/</url>
