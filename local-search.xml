@@ -11,19 +11,70 @@
     <content type="html"><![CDATA[<div class="note note-primary">            <h2 id="step-0-download-windows-iso"><a class="markdownIt-Anchor" href="#step-0-download-windows-iso"></a> Step 0: Download Windows ISO</h2><p>You may download Windows 11 ISO from microsoft official website: <a href="https://www.microsoft.com/zh-cn/software-download/windows11">https://www.microsoft.com/zh-cn/software-download/windows11</a>.</p><p>If you do not want the newest version (for example, Windows11 21H2, 22H2), you may use <a href="https://github.com/AveYo/MediaCreationTool.bat">MediaCreationTool.bat (Github link)</a>, where you can select ‘Auto ISO’ and choose a history version of Windows. See the <a href="http://README.md">README.md</a> in the Github link for details.</p>          </div><hr /><h2 id="problem-description"><a class="markdownIt-Anchor" href="#problem-description"></a> Problem Description</h2><p>You may encounter ‘This PC can’t run Windows 11’ when upgrading to or installing Windows 11, like follows:</p><img src="/2024/46-win11-skiptpm/installer-2.webp" class=""><img src="/2024/46-win11-skiptpm/installer-1.jpg" class=""><hr /><div class="note note-success">            <p>Personal thoughts: Using Rufus ([Solution 4](#Solution 4: Use Rufus)) seems to be the most convenient way.</p>          </div><h2 id="solution-1-registry"><a class="markdownIt-Anchor" href="#solution-1-registry"></a> Solution 1: registry</h2><div class="note note-info">            <p>If you are booting from Windows 11 install disk, use Shift+F10 to open cmd. Otherwise just open cmd (run as administrater).</p>          </div><p>Use cmd to execute the following:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell">reg add HKLM\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d <span class="hljs-number">1</span> /f<br>reg add HKLM\SYSTEM\Setup\LabConfig /v BypassSecureBootCheck /t REG_DWORD /d <span class="hljs-number">1</span> /f<br>reg add HKLM\SYSTEM\Setup\LabConfig /v BypassRAMCheck /t REG_DWORD /d <span class="hljs-number">1</span> /f<br>reg add HKLM\SYSTEM\Setup\LabConfig /v BypassStorageCheck /t REG_DWORD /d <span class="hljs-number">1</span> /f<br>reg add HKLM\SYSTEM\Setup\MoSetup /v AllowUpgradesWithUnsupportedTPMOrCPU /t REG_DWORD /d <span class="hljs-number">1</span> /f<br></code></pre></td></tr></table></figure><p>Or, if you prefer the GUI registry editor, use Win+R and type <code>regedit</code>. Navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code>, create an item called <code>LabConfig</code>, and add the following DWORD values:</p><ul><li>key name <code>BypassTPMCheck</code>, value <code>00000001</code>.</li><li>key name <code>BypassSecureBootCheck</code>, value <code>00000001</code></li><li>key name <code>BypassRAMCheck</code>, value <code>00000001</code></li><li>key name <code>BypassStorageCheck</code>, value <code>00000001</code></li></ul><p>Then navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup</code>, create a DWORD item with</p><ul><li>key name <code>AllowUpgradesWithUnsupportedTPMOrCPU</code>, value <code>00000001</code>.</li></ul><p>Save and exit. Like the following</p><img src="/2024/46-win11-skiptpm/registry-keys.webp" class=""><h2 id="solution-2-modify-wim-property-to-server"><a class="markdownIt-Anchor" href="#solution-2-modify-wim-property-to-server"></a> Solution 2: Modify WIM property to ‘Server’</h2><p>Use <a href="https://wimlib.net/">wimlib</a> (the open source Windows Imaging (WIM) library) to modify the ‘image-property’ of <code>sources\install.vim</code> to ‘Server’.</p><p>Download wimlib and execute</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">.\wimlib<span class="hljs-literal">-imagex</span>.exe info \path\to\Windows11.ISO\sources\install.wim <span class="hljs-literal">--header</span><br></code></pre></td></tr></table></figure><p>Look at ‘<code>Image Count</code>’ in the output, it should be a number.</p><p>Then execute</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">.\wimlib<span class="hljs-literal">-imagex</span>.exe info \path\to\Windows11.ISO\sources\install.wim <span class="hljs-literal">--image-property</span> WINDOWS/INSTALLATIONTYPE=Server<br></code></pre></td></tr></table></figure><p>Note that after changing to ‘Server’, you might be required to enter a product key when installing Windows. In this case, use <code>sources\setup.exe</code> instead of the <code>setup.exe</code> from the root folder of the ISO.</p><h2 id="solution-3-use-windows10-iso-and-replace-installwim"><a class="markdownIt-Anchor" href="#solution-3-use-windows10-iso-and-replace-installwim"></a> Solution 3: Use Windows10 ISO and replace install.wim</h2><p>Download any <strong>Windows 10 ISO</strong> and your selected Windows 11 ISO image.</p><p>Uncompress the Windows 10 ISO, replace <code>sources/install.wim</code> with the install.wim in Windows 11 ISO. Then run the Windows 10 setup.exe.</p><p>In this way you are installing Windows 11 image with Windows 10 installer, so don’t worry if you see “Windows 10 installer”. You are installing Windows 11.</p><h2 id="solution-4-use-rufus"><a class="markdownIt-Anchor" href="#solution-4-use-rufus"></a> Solution 4: Use Rufus</h2><p>Download <a href="https://rufus.ie/">Rufus</a>, plug in an external U-disk and create a USB startup disk using Rufus.</p><img src="/2024/46-win11-skiptpm/rufus-1.png" class=""><p>After that, directly run the setup.exe from your external U-disk.</p>]]></content>
     
     
+    <categories>
+      
+      <category>Windows</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Windows</tag>
+      
+    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>无限白嫖FCPX</title>
+    <title>CS110 Longan Nano 配置与使用</title>
+    <link href="/2024/45_cs11024s_longan/"/>
+    <url>/2024/45_cs11024s_longan/</url>
+    
+    <content type="html"><![CDATA[<h1 id="非官方-cs110-longan-nano-指南"><a class="markdownIt-Anchor" href="#非官方-cs110-longan-nano-指南"></a> 非官方 CS110 Longan Nano 指南</h1><h2 id="lab-11-lab-12-project-3-目的"><a class="markdownIt-Anchor" href="#lab-11-lab-12-project-3-目的"></a> Lab 11, Lab 12, Project 3 目的</h2><ul><li><strong>Lab11</strong>: 领取Longan Nano开发套件；使用 <code>dfu-util</code> 或 <code>DFU tool</code> 烧录固件并测试，确保7个按钮功能正常。Lab11不需要platformio。</li><li><strong>Lab12</strong>: 学会对Longan Nano编程；学会使用platformio编译固件。</li><li><strong>Project3</strong>: 制作Flappy Bird游戏。</li></ul><h2 id="longan-nano-核心版与载板的连接"><a class="markdownIt-Anchor" href="#longan-nano-核心版与载板的连接"></a> Longan Nano 核心版与载板的连接</h2><p>确保Longan Nano每侧只有17个pin，而不是20个。如果是20个，把靠近type-c口的三个排针掰掉。</p><p>“8P排针紧贴此侧”；插到底。</p><h2 id="dfu工具的安装"><a class="markdownIt-Anchor" href="#dfu工具的安装"></a> DFU工具的安装</h2><p>下载地址：<a href="https://epan.shanghaitech.edu.cn/l/KFjNMO">https://epan.shanghaitech.edu.cn/l/KFjNMO</a></p><p>DFU工具的用途：将已经编译好的固件(<code>.bin</code>)刷入Longan Nano开发板中。</p><h3 id="windows-gd32-mcu-dfu-tool"><a class="markdownIt-Anchor" href="#windows-gd32-mcu-dfu-tool"></a> Windows (GD32 MCU DFU Tool)</h3><p>打开 <code>windows-version\GD32 MCU Dfu Drivers_v1.0.1.2316</code>, 下面有两个文件夹（<code>x86</code>和<code>x64</code>），如果Windows操作系统为64位，请进入 <code>x64</code>；如果系统为32位，请进入 <code>x86</code> (绝大多数情况下，你的电脑是64位的)。</p><p>进入后运行 <code>GD32 MCU Dfu Drivers.exe</code> 安装驱动。</p><p>有可能导致蓝屏，如果电脑蓝屏则重启重试。</p><p>打开 <code>windows-version\GD32 MCU Dfu Tool_v3.8.1.5784</code>，运行 <code>GD32 MCU Dfu Tool.exe</code>。</p><p>实在受不了蓝屏的话请换Linux，实体机虚拟机都行。</p><h3 id="linux-dfu-util"><a class="markdownIt-Anchor" href="#linux-dfu-util"></a> Linux (dfu-util)</h3><p>找到 <code>linux-version</code> 下的 <code>dfu-util</code>。这是一个可执行文件，在终端中输入 <code>./dfu-util</code> 运行。</p><p>如果出现 “Permission denied”，请先执行 <code>chmod +x ./dfu-util</code>。</p><p>如果刷固件时出现错误，请尝试使用 <code>sudo ./dfu-util</code>。</p><h2 id="dfu工具的使用烧录固件的方法"><a class="markdownIt-Anchor" href="#dfu工具的使用烧录固件的方法"></a> DFU工具的使用（烧录固件的方法）</h2><p><strong>第一步：进入DFU模式</strong></p><p>首先需要在Longan Nano上进入DFU模式，进入的方法如下：</p><ol><li>按住 BOOT0 按键，不要松开</li><li>按住 RESET 按键，不要松开</li><li>松开 RESET 按键</li><li>松开 BOOT0 按键</li></ol><p>注意：按键的顺序非常重要，请勿颠倒。如果失败请重试一遍。</p><p>BOOT0按键和RESET按键的位置请查看下图</p><p><img src="https://toast-lab.sist.shanghaitech.edu.cn/courses/CS110@ShanghaiTech/Spring-2023/labs/lab12/Lab%2012%20-%20Computer%20Architecture%20I%20-%20ShanghaiTech%20University_files/nano.png" alt="nano.png" /></p><p><strong>第二步：下载（刷入）固件</strong></p><ul><li><p>Windows:</p><ul><li><p>运行 <code>GD32 MCU Dfu Tool.exe</code></p></li><li><p>选择 “Download to Device”, 选择需要刷入的固件（后缀名为<code>.bin</code>），可能需要在文件选择器右下角将文件后缀选择到<code>.bin</code>。</p></li><li><p>保持默认 <code>@0x80000000</code>。通常不需要 “Verify After Download” 或 “Erase All”。</p></li><li><p>点击 “OK” 进行刷入。</p><p><strong>如果找不到设备，请检查Longan Nano是否已进入DFU模式；是否已经安装 <code>GD32 MCU Dfu Drivers_v1.0.1.2316</code> 文件夹下的驱动；当前使用的USB typec线是否只能供电不能传数据，可以换一根线重试；请直接插到Longan Nano自带的type-口上，不要插到载板上的“仅供电”口上。</strong></p></li></ul></li><li><p>Linux:</p><ul><li><p>找到 <code>linux-version</code> 下的 <code>dfu-util</code>。输入 <code>./dfu-util</code> 运行。</p><p>如果出现 “Permission denied”，请先执行 <code>chmod +x ./dfu-util</code>。</p><p>如果刷固件时出现错误，请尝试使用 <code>sudo ./dfu-util</code>。</p></li><li><p>执行一下命令，查看dfu-util能否识别到当前设备。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./dfu-util -l<br></code></pre></td></tr></table></figure><p>如果输出内容包含 <code>2e89:0189</code>，则代表已经检测到了Longan Nano设备。</p><p><strong>如果找不到设备，请检查Longan Nano是否已进入DFU模式；如果使用的是Linux虚拟机，请检查虚拟机的设置，确认USB设备连接在虚拟机上而非Windows主机上；当前使用的USB typec线是否只能供电不能传数据，可以换一根线重试；请直接插到Longan Nano自带的type-口上，不要插到载板上的“仅供电”口上。</strong></p><p>如果能够显示设备但不是 <code>2e89:0189</code>，请尝试使用 <code>lsusb</code> 命令。TODO</p></li><li><p>找到需要刷入的固件（后缀名为 <code>.bin</code>）。假设该 <code>.bin</code> 文件已在当前目录下，使用以下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./dfu-util -a 0 --dfuse-address 0x08000000:leave -D ./lab-longan-nano-firmware-distributable.bin<br></code></pre></td></tr></table></figure><p>如果出现错误，尝试在命令前添加 <code>sudo</code> 并重试。</p></li><li><p>出现 <code>Invalid DFU suffix signature</code> and <code>dfu-util: Error during download get_status</code> 错误可忽略。</p></li></ul></li><li><p>Mac:</p><ul><li><p>通过 homebrew 安装 <code>dfu-util</code>.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install dfu-util<br></code></pre></td></tr></table></figure></li><li><p>剩余过程同Linux</p></li></ul></li></ul><p><strong>第三步：离开DFU模式</strong></p><p>在Longan Nano上按下 RESET 按键即可。或者也可以拔掉 Longan Nano 上的typec线并重新插入（即断电再开机）。</p><p>以下为Lab12的内容</p><h2 id="platformio的安装"><a class="markdownIt-Anchor" href="#platformio的安装"></a> PlatformIO的安装</h2><ul><li>推荐使用 vscode 和 PlatformIO IDE 插件的方式（这也是 <a href="https://platformio.org">platformio.org</a> 官网推荐的方式），这样能获得最好的开发体验。</li><li>也可以纯命令行使用 <code>pip</code> 安装 <code>platformio</code> (<code>python3 -m pip install platformio</code>)，终端执行 <code>platformio run</code> 进行编译。</li><li><strong>不要混用两种方法</strong>（即不要既通过 pip 安装 platformio 又安装 vscode 的 PlatformIO IDE 插件；可以先卸载 pip 的 platformio 再去安装 vscode 插件）。</li></ul><h3 id="vscode-插件方式"><a class="markdownIt-Anchor" href="#vscode-插件方式"></a> vscode 插件方式</h3><p>在 <a href="https://toast-lab.sist.shanghaitech.edu.cn/courses/CS110@ShanghaiTech/Spring-2024/labs/Lab12/lab12-starter-20240515.tar.gz">此处</a> 下载 lab12-starter，并解压。</p><img src="/2024/45_cs11024s_longan/vscode-platformioide-plugin.webp" class=""><p>插件安装完成之后，点击 vscode 侧边栏中的 PlatformIO 图标，等待初始化完成</p><img src="/2024/45_cs11024s_longan/vscode-2.webp" class=""><p>解压下载的 lab12-starter, 打开该目录并打开里面的 <code>platformio.ini</code> 文件，点击 build</p><img src="/2024/45_cs11024s_longan/vscode-build.webp" class=""><p>由于Sipeed从platformio仓库中移除了Longan nano的开发套件，可能会提示错误。请下载 <a href="https://epan.shanghaitech.edu.cn/l/KFjNMO">https://epan.shanghaitech.edu.cn/l/KFjNMO</a> 中的Longan Dev Kit，按照里面的说明文档进行开发工具的安装。</p><p>然后需要将编译好的固件烧录进 Longan Nano。编译好的固件在 <code>./.pio/build/sipeed-longan-nano/firmware.bin</code>，请参考上文DFU工具的使用将该 <code>.bin</code> 结尾的固件刷入。</p><img src="/2024/45_cs11024s_longan/firmware-location.webp" class=""><p>Troubleshooting:</p><ul><li>Fail to initialize PlatformIO: 彻底退出vscode并重试</li><li>Cannot find Python Interpreter when initializing PlatformIO: 参考<a href="https://github.com/platformio/platformio-core-installer/issues/1774">此处</a>的方法</li></ul><h3 id="命令行方法"><a class="markdownIt-Anchor" href="#命令行方法"></a> 命令行方法</h3><p>使用 pip 安装 platformio</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">python3 -m pip <span class="hljs-keyword">install</span> platformio`<br></code></pre></td></tr></table></figure><p>同样下载 lab12-starter，解压</p><p>下载 <a href="https://epan.shanghaitech.edu.cn/l/KFjNMO">https://epan.shanghaitech.edu.cn/l/KFjNMO</a> 中的Longan Dev Kit，按照里面的说明文档进行开发工具的安装</p><p>然后使用 <code>platformio run</code> 命令进行编译</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">platformio <span class="hljs-built_in">run</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Lecture Notes</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C</tag>
+      
+      <tag>Lecture Notes</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Free Official FCPX</title>
     <link href="/2024/44_fcpx_crack/"/>
     <url>/2024/44_fcpx_crack/</url>
     
-    <content type="html"><![CDATA[<p>官网下载<a href="https://www.apple.com/final-cut-pro/trial/">Final Cut Pro Trial</a>.</p><img src="/2024/44_fcpx_crack/1.jpg" class=""><p>执行以下代码即可回到剩余90天试用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rm -f ~/Library/Application\ Support/.ffuserdata<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Download <a href="https://www.apple.com/final-cut-pro/trial/">Final Cut Pro Trial</a>.</p><img src="/2024/44_fcpx_crack/1.jpg" class=""><p>Execute the following and the trial period will be reset (reset to 90 days remaining)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rm -f ~/Library/Application\ Support/.ffuserdata<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>macOS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>macOS</tag>
+      
+    </tags>
     
   </entry>
   
@@ -39,7 +90,7 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Frontend</category>
       
     </categories>
     
@@ -66,7 +117,7 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Windows</category>
       
     </categories>
     
@@ -74,35 +125,6 @@
     <tags>
       
       <tag>Windows</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Ubuntu如何挂载新硬盘</title>
-    <link href="/2024/41_ubuntu_uuid/"/>
-    <url>/2024/41_ubuntu_uuid/</url>
-    
-    <content type="html"><![CDATA[<h2 id="查看硬盘uuid的几种方法"><a class="markdownIt-Anchor" href="#查看硬盘uuid的几种方法"></a> 查看硬盘UUID的几种方法</h2><ul><li><p><code>ls -l /dev/disk/by-uuid</code></p><img src="/2024/41_ubuntu_uuid/ls_dev_disk_by_uuid.png" class=""></li><li><p><code>sudo blkid</code></p><img src="/2024/41_ubuntu_uuid/sudo_blkid.png" class=""></li><li><p><code>lsblk -o name,mountpoint,size,uuid</code></p><img src="/2024/41_ubuntu_uuid/lsblk.png" class=""></li></ul><h2 id="格式化硬盘为ext4"><a class="markdownIt-Anchor" href="#格式化硬盘为ext4"></a> 格式化硬盘为ext4</h2><ul><li><p><code>sudo mkfs.ext4 /dev/sda</code></p></li><li><p><code>sudo mkfs -t ext4 /dev/sda</code></p></li></ul><h2 id="手动挂载硬盘"><a class="markdownIt-Anchor" href="#手动挂载硬盘"></a> 手动挂载硬盘</h2><p>将 <code>/dev/sda</code> 硬盘挂载到 <code>/mnt/ssd</code> 上</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir -p /mnt/ssd<br>sudo mount /dev/sda /mnt/ssd<br></code></pre></td></tr></table></figure><h2 id="开机自动挂载硬盘"><a class="markdownIt-Anchor" href="#开机自动挂载硬盘"></a> 开机自动挂载硬盘</h2><p>修改 <code>/etc/fstab</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/fstab<br></code></pre></td></tr></table></figure><p>在文件末尾加入信息</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">UUID</span>=<span class="hljs-number">67</span>E91005-EB18-<span class="hljs-number">4</span>E24-<span class="hljs-number">8410</span>-EB9A1C2E3882 /mnt/ssd ext4 defaults <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure><p>E.g.</p><img src="/2024/41_ubuntu_uuid/etc_fstab.png" class="">]]></content>
-    
-    
-    <categories>
-      
-      <category>Code</category>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -195,7 +217,7 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
       <category>R</category>
       
@@ -276,9 +298,7 @@
     
     <categories>
       
-      <category>Code</category>
-      
-      <category>C++</category>
+      <category>Algorithm</category>
       
     </categories>
     
@@ -359,9 +379,7 @@
     
     <categories>
       
-      <category>Code</category>
-      
-      <category>Raspi&amp;Arduino</category>
+      <category>Singlechip &amp; RaspberryPi</category>
       
     </categories>
     
@@ -392,9 +410,9 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
-      <category>Docker</category>
+      <category>docker</category>
       
     </categories>
     
@@ -423,9 +441,9 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
-      <category>Docker</category>
+      <category>docker</category>
       
     </categories>
     
@@ -453,6 +471,8 @@
     
     
     <categories>
+      
+      <category>Cross Platform</category>
       
       <category>nginx</category>
       
@@ -515,9 +535,9 @@
     
     <tags>
       
-      <tag>git</tag>
+      <tag>Cross Platform</tag>
       
-      <tag>linux</tag>
+      <tag>git</tag>
       
     </tags>
     
@@ -542,9 +562,9 @@
     
     <tags>
       
-      <tag>hexo</tag>
-      
       <tag>nginx</tag>
+      
+      <tag>Cross Platform</tag>
       
     </tags>
     
@@ -561,6 +581,8 @@
     
     
     <categories>
+      
+      <category>Cross Platform</category>
       
       <category>hexo</category>
       
@@ -591,8 +613,6 @@
     
     <categories>
       
-      <category>Code</category>
-      
       <category>Linux</category>
       
     </categories>
@@ -619,8 +639,6 @@
     
     
     <categories>
-      
-      <category>Code</category>
       
       <category>Linux</category>
       
@@ -649,8 +667,6 @@
     
     <categories>
       
-      <category>Code</category>
-      
       <category>Linux</category>
       
     </categories>
@@ -676,9 +692,9 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
-      <category>Linux</category>
+      <category>NAT</category>
       
     </categories>
     
@@ -732,9 +748,9 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
-      <category>Linux</category>
+      <category>ssh</category>
       
     </categories>
     
@@ -790,9 +806,9 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
-      <category>VSCode</category>
+      <category>ssh</category>
       
     </categories>
     
@@ -848,6 +864,8 @@
     
     <categories>
       
+      <category>Cross Platform</category>
+      
       <category>hexo</category>
       
     </categories>
@@ -875,9 +893,7 @@
     
     <categories>
       
-      <category>Code</category>
-      
-      <category>C++</category>
+      <category>Algorithm</category>
       
     </categories>
     
@@ -936,7 +952,7 @@
     
     <tags>
       
-      <tag>vscode</tag>
+      <tag>macOS</tag>
       
     </tags>
     
@@ -953,6 +969,8 @@
     
     
     <categories>
+      
+      <category>Cross Platform</category>
       
       <category>hexo</category>
       
@@ -981,7 +999,7 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
       <category>VSCode</category>
       
@@ -1012,7 +1030,7 @@
     
     <categories>
       
-      <category>Code</category>
+      <category>Cross Platform</category>
       
       <category>VSCode</category>
       
@@ -1041,9 +1059,7 @@
     
     <categories>
       
-      <category>Code</category>
-      
-      <category>Raspi&amp;Arduino</category>
+      <category>Singlechip &amp; RaspberryPi</category>
       
     </categories>
     
@@ -1069,14 +1085,12 @@
     <link href="/2021/02_raspi_config/"/>
     <url>/2021/02_raspi_config/</url>
     
-    <content type="html"><![CDATA[<h3 id="start-vnc-and-ssh"><a class="markdownIt-Anchor" href="#start-vnc-and-ssh"></a> Start VNC and SSH</h3><p>Enter the terminal of raspi, <code>sudo raspi-config</code>，and start vnc and ssh with the UI interface.</p><p>Alternatively, after you flashed the SD card with raspi os, create a file named <code>ssh</code> (no filename extension, just <code>ssh</code>) at the root of the directory, and SSH will be automatically enabled during the first system startup.</p><p><em><span id="more"></span></em></p><h3 id="remote-host-identification-changed-error"><a class="markdownIt-Anchor" href="#remote-host-identification-changed-error"></a> ‘Remote host identification changed’ error</h3><p>When connecting to raspi (or any other ssh hosts) with ssh, if the following error happens:</p><img src="/2021/02_raspi_config/ssh_host_changed.png" class=""><p>The solution is to use the following command (replace <code>&lt;IP_ADDRESS&gt;</code> with the IP address of raspi), and connect again</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">ssh-keygen -R &lt;IP_ADDRESS&gt;<br></code></pre></td></tr></table></figure><h3 id="apt-get切换国内源"><a class="markdownIt-Anchor" href="#apt-get切换国内源"></a> apt-get切换国内源</h3><p>首先查看linux（树莓派os为debian）版本：<code>lsb_release -a</code>，版本可能是buster或bullseye</p><p>然后看一下清华源地址：</p><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a></p><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/">https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/</a></p><div class="note note-warning"><p>似乎只有64位的raspberrypi os才能使用这个源，32位的系统请勿使用，会出错。</p></div><p>内容（可以去访问查看，也可以直接复制下面的文字）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br></code></pre></td></tr></table></figure><p>把这段文字复制下来，然后更改<code>sources.list</code>文件。这个文件的位置在：<code>/etc/apt/sources.list</code>。可以用<code>sudo vim</code>或者 mousepad 去打开修改。</p><p>更改文件完成后，shell执行<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</code>，更新这个配置文件并更新所有的包，等待一会儿就完成了！这样apt-get的速度就会快很多。</p><h3 id="install-vim"><a class="markdownIt-Anchor" href="#install-vim"></a> Install vim</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install vim <br></code></pre></td></tr></table></figure><h3 id="install-zsh-and-oh-my-zsh"><a class="markdownIt-Anchor" href="#install-zsh-and-oh-my-zsh"></a> Install zsh and oh my zsh</h3><p>For reference:  <a href="https://mintimate.cn">mintimate</a></p><p>1 Install zsh and set it as the default terminal</p><p>Install zsh：<code>sudo apt-get install zsh</code></p><p>See the path of zsh： <code>which zsh</code> , which should be <code>/bin/zsh</code> or <code>/usr/bin/zsh</code></p><p>Set it as the default shell：<code>chsh -s /bin/zsh</code>, restart terminal or restart system to take effect</p><p>2 Install ‘oh my zsh’</p><p>One-click setup script:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">zsh -c &quot;$(curl -fsSL &#x27;https://api.host.mintimate.cn/fileHost/public/download/1P0R&#x27;)&quot;<br></code></pre></td></tr></table></figure><p>switch theme：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.zshrc<br><span class="hljs-meta prompt_"># </span><span class="language-bash">mintimate<span class="hljs-string">&#x27;s theme: steeef</span></span><br>source ~/.zshrc<br></code></pre></td></tr></table></figure><h3 id="vim-code-highlighting-line-number-display"><a class="markdownIt-Anchor" href="#vim-code-highlighting-line-number-display"></a> vim code highlighting, line number display…</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.vimrc  # don&#x27;t worry if the file does not exist, vim will create one <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Add the following————————————————</span><br>syntax on &quot; syntax highlighting<br><br>set tabstop=4  &quot; <br>set softtabstop=4<br>set shiftwidth=4  &quot;  <br><br>set nu   &quot; show line number<br>colorscheme pablo   &quot; set theme<br>set ruler   &quot; Show the pointer positon at bottom-right corner when editing<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Save and <span class="hljs-built_in">exit</span>, and it will take effect the next time you enter vim</span><br><br></code></pre></td></tr></table></figure><h3 id="see-cpu-usage"><a class="markdownIt-Anchor" href="#see-cpu-usage"></a> See CPU usage：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pip install s-tui<br><br>sudo s-tui<br></code></pre></td></tr></table></figure><h3 id="github太慢"><a class="markdownIt-Anchor" href="#github太慢"></a> github太慢：</h3><div class="note note-danger">            <p>此方法已经失效！The following solution may have been outdated!</p>          </div><p>使用github的镜像网站进行访问，<a href="https://link.zhihu.com/?target=http%3A//github.com.cnpmjs.org">github.com.cnpmjs.org</a>，<a href="http://xn--github-9v7i14cmxwt8ufgphoo860cba747n70q.com">我们将原本的网站中的github.com</a> 进行替换。比如<code>git clone github.com/xxx/xxx.git</code>，将其替换为<code>git clone github.com.cnpmjs.org/xxx/xxx.git</code></p><h3 id="禁止息屏"><a class="markdownIt-Anchor" href="#禁止息屏"></a> 禁止息屏(?)：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/lightdm/lightdm.conf<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">找到[SeatDefaults]下：</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">server-command=X 将这一行修改为：</span><br>xserver-command=X -s 0 -dpms<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-s 设置屏幕保护不启用</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">dpms 关闭电源节能管理</span><br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="start-vnc-and-ssh"><a class="markdownIt-Anchor" href="#start-vnc-and-ssh"></a> Start VNC and SSH</h3><p>Enter the terminal of raspi, <code>sudo raspi-config</code>，and start vnc and ssh with the UI interface.</p><p>Alternatively, after you flashed the SD card with raspi os, create a file named <code>ssh</code> (no filename extension, just <code>ssh</code>) at the root of the directory, and SSH will be automatically enabled during the first system startup.</p><p><em><span id="more"></span></em></p><h3 id="remote-host-identification-changed-error"><a class="markdownIt-Anchor" href="#remote-host-identification-changed-error"></a> ‘Remote host identification changed’ error</h3><p>When connecting to raspi (or any other ssh hosts) with ssh, if the following error happens:</p><img src="/2021/02_raspi_config/ssh_host_changed.png" class=""><p>The solution is to use the following command (replace <code>&lt;IP_ADDRESS&gt;</code> with the IP address of raspi), and connect again</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">ssh-keygen -R &lt;IP_ADDRESS&gt;<br></code></pre></td></tr></table></figure><h3 id="apt-get切换国内源"><a class="markdownIt-Anchor" href="#apt-get切换国内源"></a> apt-get切换国内源</h3><p>首先查看linux（树莓派os为debian）版本：<code>lsb_release -a</code>，版本可能是buster或bullseye</p><p>然后看一下清华源地址：</p><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a></p><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/">https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/</a></p><div class="note note-warning"><p>似乎只有64位的raspberrypi os才能使用这个源，32位的系统请勿使用，会出错。</p></div><p>内容（可以去访问查看，也可以直接复制下面的文字）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br>deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free<br><span class="hljs-meta prompt_"># </span><span class="language-bash">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br></code></pre></td></tr></table></figure><p>把这段文字复制下来，然后更改<code>sources.list</code>文件。这个文件的位置在：<code>/etc/apt/sources.list</code>。可以用<code>sudo vim</code>或者 mousepad 去打开修改。</p><p>更改文件完成后，shell执行<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</code>，更新这个配置文件并更新所有的包，等待一会儿就完成了！这样apt-get的速度就会快很多。</p><h3 id="install-vim"><a class="markdownIt-Anchor" href="#install-vim"></a> Install vim</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install vim <br></code></pre></td></tr></table></figure><h3 id="install-zsh-and-oh-my-zsh"><a class="markdownIt-Anchor" href="#install-zsh-and-oh-my-zsh"></a> Install zsh and oh my zsh</h3><p>For reference:  <a href="https://mintimate.cn">mintimate</a></p><p>1 Install zsh and set it as the default terminal</p><p>Install zsh：<code>sudo apt-get install zsh</code></p><p>See the path of zsh： <code>which zsh</code> , which should be <code>/bin/zsh</code> or <code>/usr/bin/zsh</code></p><p>Set it as the default shell：<code>chsh -s /bin/zsh</code>, restart terminal or restart system to take effect</p><p>2 Install ‘oh my zsh’</p><p>One-click setup script:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">zsh -c &quot;$(curl -fsSL &#x27;https://api.host.mintimate.cn/fileHost/public/download/1P0R&#x27;)&quot;<br></code></pre></td></tr></table></figure><p>switch theme：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.zshrc<br><span class="hljs-meta prompt_"># </span><span class="language-bash">mintimate<span class="hljs-string">&#x27;s theme: steeef</span></span><br>source ~/.zshrc<br></code></pre></td></tr></table></figure><h3 id="vim-code-highlighting-line-number-display"><a class="markdownIt-Anchor" href="#vim-code-highlighting-line-number-display"></a> vim code highlighting, line number display…</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.vimrc  # don&#x27;t worry if the file does not exist, vim will create one <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Add the following————————————————</span><br>syntax on &quot; syntax highlighting<br><br>set tabstop=4  &quot; <br>set softtabstop=4<br>set shiftwidth=4  &quot;  <br><br>set nu   &quot; show line number<br>colorscheme pablo   &quot; set theme<br>set ruler   &quot; Show the pointer positon at bottom-right corner when editing<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Save and <span class="hljs-built_in">exit</span>, and it will take effect the next time you enter vim</span><br><br></code></pre></td></tr></table></figure><h3 id="see-cpu-usage"><a class="markdownIt-Anchor" href="#see-cpu-usage"></a> See CPU usage：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pip install s-tui<br><br>sudo s-tui<br></code></pre></td></tr></table></figure><h3 id="禁止息屏"><a class="markdownIt-Anchor" href="#禁止息屏"></a> 禁止息屏(?)：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/lightdm/lightdm.conf<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">找到[SeatDefaults]下：</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">server-command=X 将这一行修改为：</span><br>xserver-command=X -s 0 -dpms<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-s 设置屏幕保护不启用</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">dpms 关闭电源节能管理</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
       
-      <category>Code</category>
-      
-      <category>Raspi&amp;Arduino</category>
+      <category>Singlechip &amp; RaspberryPi</category>
       
     </categories>
     
@@ -1116,9 +1130,7 @@
     
     <categories>
       
-      <category>Code</category>
-      
-      <category>Raspi&amp;Arduino</category>
+      <category>Singlechip &amp; RaspberryPi</category>
       
     </categories>
     
