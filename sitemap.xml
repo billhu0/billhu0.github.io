@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.billhu.us/2024/47_flush_dns_cache/</loc>
+    
+    <lastmod>2024-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2024/48_kmp/</loc>
     
     <lastmod>2024-07-12</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://www.billhu.us/2024/46_win11_skip_tpm/</loc>
-    
-    <lastmod>2024-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2024/47_flush_dns_cache/</loc>
     
     <lastmod>2024-07-12</lastmod>
     
@@ -245,24 +245,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/19_linux_commands/</loc>
-    
-    <lastmod>2024-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2022/20_ubuntu-config/</loc>
-    
-    <lastmod>2024-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2021/17_arduino_ultrasonic/</loc>
     
     <lastmod>2024-07-12</lastmod>
@@ -273,6 +255,24 @@
   
   <url>
     <loc>https://www.billhu.us/2022/18_ubt_swap/</loc>
+    
+    <lastmod>2024-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/19_linux_commands/</loc>
+    
+    <lastmod>2024-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/20_ubuntu-config/</loc>
     
     <lastmod>2024-07-12</lastmod>
     
@@ -380,15 +380,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/03_raspi_homebridge/</loc>
-    
-    <lastmod>2024-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2021/05_vscode_cpp/</loc>
     
     <lastmod>2024-07-12</lastmod>
@@ -408,6 +399,15 @@
   
   <url>
     <loc>https://www.billhu.us/2021/02_raspi_config/</loc>
+    
+    <lastmod>2024-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2021/03_raspi_homebridge/</loc>
     
     <lastmod>2024-07-12</lastmod>
     
