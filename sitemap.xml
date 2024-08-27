@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.billhu.us/2024/49_js_accessor_property/</loc>
-    
-    <lastmod>2024-08-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2024/50_penndot_knowledge/</loc>
     
     <lastmod>2024-08-27</lastmod>
@@ -29,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2024/46_win11_skip_tpm/</loc>
-    
-    <lastmod>2024-08-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2024/47_flush_dns_cache/</loc>
     
     <lastmod>2024-08-27</lastmod>
@@ -48,6 +30,24 @@
   
   <url>
     <loc>https://www.billhu.us/2024/48_kmp/</loc>
+    
+    <lastmod>2024-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2024/49_js_accessor_property/</loc>
+    
+    <lastmod>2024-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2024/46_win11_skip_tpm/</loc>
     
     <lastmod>2024-08-27</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2023/37_cs537/</loc>
+    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
     
     <lastmod>2024-08-27</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
+    <loc>https://www.billhu.us/2023/37_cs537/</loc>
     
     <lastmod>2024-08-27</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/26_lets_encrypt_ssl/</loc>
+    <loc>https://www.billhu.us/2022/27_2_docker_gitlab/</loc>
     
     <lastmod>2024-08-27</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/27_2_docker_gitlab/</loc>
+    <loc>https://www.billhu.us/2022/26_lets_encrypt_ssl/</loc>
     
     <lastmod>2024-08-27</lastmod>
     
@@ -407,24 +407,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/01_hello_world/</loc>
-    
-    <lastmod>2024-08-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2021/02_raspi_config/</loc>
-    
-    <lastmod>2024-08-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2021/03_raspi_homebridge/</loc>
     
     <lastmod>2024-08-27</lastmod>
@@ -435,6 +417,24 @@
   
   <url>
     <loc>https://www.billhu.us/2021/05_vscode_cpp/</loc>
+    
+    <lastmod>2024-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2021/01_hello_world/</loc>
+    
+    <lastmod>2024-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2021/02_raspi_config/</loc>
     
     <lastmod>2024-08-27</lastmod>
     
