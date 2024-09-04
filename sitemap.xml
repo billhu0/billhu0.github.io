@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.billhu.us/2024/49_js_accessor_property/</loc>
+    
+    <lastmod>2024-09-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2024/50_penndot_knowledge/</loc>
     
     <lastmod>2024-09-04</lastmod>
@@ -20,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/2024/46_win11_skip_tpm/</loc>
+    
+    <lastmod>2024-09-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2024/47_flush_dns_cache/</loc>
     
     <lastmod>2024-09-04</lastmod>
@@ -30,24 +48,6 @@
   
   <url>
     <loc>https://www.billhu.us/2024/48_kmp/</loc>
-    
-    <lastmod>2024-09-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2024/49_js_accessor_property/</loc>
-    
-    <lastmod>2024-09-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2024/46_win11_skip_tpm/</loc>
     
     <lastmod>2024-09-04</lastmod>
     
@@ -460,6 +460,15 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://www.billhu.us/2024/052-cmu-15641/</loc>
+    
+    <lastmod>2024-09-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   <url>
     <loc>https://www.billhu.us/</loc>
@@ -731,13 +740,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/categories/Cross-Platform/hexo/</loc>
-    <lastmod>2024-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/categories/Cross-Platform/VSCode/</loc>
     <lastmod>2024-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -746,6 +748,13 @@
   
   <url>
     <loc>https://www.billhu.us/categories/Cross-Platform/ssh/</loc>
+    <lastmod>2024-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/categories/Cross-Platform/hexo/</loc>
     <lastmod>2024-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

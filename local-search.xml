@@ -17,6 +17,33 @@
   
   
   <entry>
+    <title>[Lecture Notes] CMU 15-641 Networking and the Internet</title>
+    <link href="/2024/052-cmu-15641/"/>
+    <url>/2024/052-cmu-15641/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-info">            <p>Disclaimer: 本人没选这门课，笔记是蹭课记的。不全。不建议用作参考。</p>          </div><h1 id="lecture-1"><a class="markdownIt-Anchor" href="#lecture-1"></a> Lecture 1</h1><ul><li><p><strong>Propagation Delay</strong>: how long the first bit is received</p></li><li><p><strong>Transmission Delay</strong>: how long it takes to put the remaining data</p></li><li><p>Packet Latency = Transmission Delay + Propagation Delay</p></li></ul><h1 id="lecture-3"><a class="markdownIt-Anchor" href="#lecture-3"></a> Lecture 3</h1><p>解决多个设备同时发送/接收会冲突的问题</p><p>Solution: <strong>Random Access Protocols</strong></p><ul><li>Carrier Sense: listen before you send</li><li>Collision Detection: detect collisions and back off<ul><li>Listen <strong>while</strong> you transmit.</li><li>If you detect another signal, stop transmitting. Ethernet has you also send a special ‘JAM’ signal to tell other listeners that the transmission has been corrupted and stopped.</li><li><strong>Collision Recovery</strong>: <strong>Random Exponential Backoff</strong><ul><li>随机等待一段时间，随着冲突次数增加，随机等待时间的抽样范围变长</li><li>first collision: choose K from {0, 1}, delay K x 512 bit transmission times (timeslot)</li><li>second collision: choose K from {0,1,2,3}</li><li>10+ collisions: choose K from {0,1, …, 1023}</li></ul></li><li><strong>Ethernet Multiple Access Protocol (CSMA/CD)</strong>??  not used today</li></ul></li><li>Collision Avoidance: request permission to send</li></ul><p><strong>MAC addresses</strong> (Media access control address)</p><ul><li>48-bit long. Do not have a structure (think of them as random)</li></ul><p><strong>Ethernet Packet</strong></p><ul><li><img src="/2024/052-cmu-15641/ethernet-packet.png" class="" title="An Ethernet Packet"></li><li><strong>Preamble</strong>: e.g. always 1010101010… repeating</li><li><strong>SFD</strong>: Start Frame Delimiter</li><li><strong>FCS</strong>: Frame Check Sequence (to detect errors)</li></ul><p><strong>Routing</strong></p><ul><li>Routing, Generation 1: <strong>Broadcast</strong><ul><li>Everybody receives the package.</li><li><strong>Learning Switch Algorithm</strong></li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Lecture Notes</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C</tag>
+      
+      <tag>Lecture Notes</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>[Lecture Notes] CMU 15-513 Intro to Computer Systems</title>
     <link href="/2024/051-cmu-15513/"/>
     <url>/2024/051-cmu-15513/</url>
