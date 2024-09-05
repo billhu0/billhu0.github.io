@@ -326,24 +326,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/13_probability/</loc>
-    
-    <lastmod>2024-09-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2022/14_ssh_keygen/</loc>
-    
-    <lastmod>2024-09-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2022/10_hexo_katex/</loc>
     
     <lastmod>2024-09-05</lastmod>
@@ -363,6 +345,24 @@
   
   <url>
     <loc>https://www.billhu.us/2022/12_vscode_remote_passwd/</loc>
+    
+    <lastmod>2024-09-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/13_probability/</loc>
+    
+    <lastmod>2024-09-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/14_ssh_keygen/</loc>
     
     <lastmod>2024-09-05</lastmod>
     
@@ -425,6 +425,24 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/2021/01_hello_world/</loc>
+    
+    <lastmod>2024-09-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2021/02_raspi_config/</loc>
+    
+    <lastmod>2024-09-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2021/03_raspi_homebridge/</loc>
     
     <lastmod>2024-09-05</lastmod>
@@ -444,24 +462,6 @@
   
   <url>
     <loc>https://www.billhu.us/2024/052-cmu-15641/</loc>
-    
-    <lastmod>2024-09-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2021/01_hello_world/</loc>
-    
-    <lastmod>2024-09-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2021/02_raspi_config/</loc>
     
     <lastmod>2024-09-05</lastmod>
     
@@ -542,6 +542,13 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/tags/hexo/</loc>
+    <lastmod>2024-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/tags/windows/</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -550,13 +557,6 @@
   
   <url>
     <loc>https://www.billhu.us/tags/WSL/</loc>
-    <lastmod>2024-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/tags/hexo/</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
