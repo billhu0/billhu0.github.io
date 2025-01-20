@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2024/42_git_bash_zsh/</loc>
+    <loc>https://www.billhu.us/2024/43_cors/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2024/43_cors/</loc>
+    <loc>https://www.billhu.us/2024/42_git_bash_zsh/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -155,15 +155,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2024/32_macos/</loc>
-    
-    <lastmod>2025-01-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2022/30_c_and_cpp/</loc>
     
     <lastmod>2025-01-20</lastmod>
@@ -174,6 +165,15 @@
   
   <url>
     <loc>https://www.billhu.us/2022/31_pixel3/</loc>
+    
+    <lastmod>2025-01-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2024/32_macos/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -344,6 +344,15 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/2022/12_vscode_remote_passwd/</loc>
+    
+    <lastmod>2025-01-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2022/10_hexo_katex/</loc>
     
     <lastmod>2025-01-20</lastmod>
@@ -354,15 +363,6 @@
   
   <url>
     <loc>https://www.billhu.us/2022/11_d/</loc>
-    
-    <lastmod>2025-01-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.billhu.us/2022/12_vscode_remote_passwd/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -443,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2024/051-cmu-15513/</loc>
+    <loc>https://www.billhu.us/2021/03_raspi_homebridge/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/03_raspi_homebridge/</loc>
+    <loc>https://www.billhu.us/2024/051-cmu-15513/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
