@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2024/43_cors/</loc>
+    <loc>https://www.billhu.us/2024/42_git_bash_zsh/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2024/42_git_bash_zsh/</loc>
+    <loc>https://www.billhu.us/2024/43_cors/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -344,15 +344,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/12_vscode_remote_passwd/</loc>
-    
-    <lastmod>2025-01-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2022/10_hexo_katex/</loc>
     
     <lastmod>2025-01-20</lastmod>
@@ -371,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/09_vscode_latex/</loc>
+    <loc>https://www.billhu.us/2022/12_vscode_remote_passwd/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -380,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/07_wsl/</loc>
+    <loc>https://www.billhu.us/2021/09_vscode_latex/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -398,6 +389,15 @@
   </url>
   
   <url>
+    <loc>https://www.billhu.us/2021/07_wsl/</loc>
+    
+    <lastmod>2025-01-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.billhu.us/2021/06_hexo/</loc>
     
     <lastmod>2025-01-20</lastmod>
@@ -407,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2025/056_cmu_14740/</loc>
+    <loc>https://www.billhu.us/2021/05_vscode_cpp/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
@@ -416,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2021/05_vscode_cpp/</loc>
+    <loc>https://www.billhu.us/2025/056_cmu_14740/</loc>
     
     <lastmod>2025-01-20</lastmod>
     
