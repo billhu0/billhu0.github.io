@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2023/37_cs537/</loc>
+    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
     
     <lastmod>2025-02-06</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/36_r_jupyter/</loc>
+    <loc>https://www.billhu.us/2023/37_cs537/</loc>
     
     <lastmod>2025-02-06</lastmod>
     
@@ -227,15 +227,6 @@
   </url>
   
   <url>
-    <loc>https://www.billhu.us/2022/21_hexo_server/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.billhu.us/2022/22_hexo_nginx_ssl/</loc>
     
     <lastmod>2025-02-06</lastmod>
@@ -264,6 +255,15 @@
   
   <url>
     <loc>https://www.billhu.us/2022/25_signal/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.billhu.us/2022/21_hexo_server/</loc>
     
     <lastmod>2025-02-06</lastmod>
     
